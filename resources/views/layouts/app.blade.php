@@ -16,7 +16,7 @@
 <body style="min-height: 100vh; min-width: 100vw">
     <!-- Layout -->
     @include('layouts.header')
-    <main class="container d-flex align-items-center" style="min-height: 60vh">
+    <main class="container d-flex align-items-center" style="min-height: 70vh">
         @yield('content')
     </main>
     @include('layouts.footer')
