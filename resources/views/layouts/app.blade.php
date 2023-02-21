@@ -16,12 +16,11 @@
 <body style="min-height: 100vh; min-width: 100vw">
     <!-- Layout -->
     @include('layouts.header')
-    <main class="container d-flex align-items-center" style="min-height: 70vh">
-        @yield('content')
-    </main>
+    @yield('content')
     @include('layouts.footer')
     <!-- Scripts -->
     <script src="{{ asset('build/assets/app-20b9e4fb.js') }}"></script>
+    <script src="{{ asset('jquery-3.6.3/jquery-3.6.3.min.js') }}"></script>
     <script src="{{ asset('bootstrap-5.2.3-dist/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script>
     @stack('scripts')

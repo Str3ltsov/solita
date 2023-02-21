@@ -23,3 +23,4 @@ Route::get('/apie_mus', [ApieMusController::class, 'index'])->name('apieMus');
 Route::get('/es_projects', [EsProjektaiController::class, 'index'])->name('esProjektai');
 Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos');
 Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
+Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
