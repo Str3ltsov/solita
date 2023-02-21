@@ -14,6 +14,6 @@ class PaslaugosController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        return view('paslagos.index');
+        return view('paslaugos.index');
     }
 }

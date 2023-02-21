@@ -8,15 +8,15 @@
     <!-- Title -->
     <title>{{ config('app.name', 'solita') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('build/assets/app-67cdfd2.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/assets/app-67dcdfd2.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap-5.2.3-dist/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome-free-6.3.0-web/css/all.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
-<body>
+<body style="min-height: 100vh; min-width: 100vw">
     <!-- Layout -->
     @include('layouts.header')
-    <main>
+    <main class="container d-flex align-items-center" style="min-height: 60vh">
         @yield('content')
     </main>
     @include('layouts.footer')
