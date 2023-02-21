@@ -14,9 +14,13 @@
     @stack('styles')
 </head>
 <body>
+    <!-- Layout -->
+    @include('layouts.header')
     <main>
         @yield('content')
     </main>
+    @include('layouts.footer')
+    <!-- Scripts -->
     <script src="{{ asset('build/assets/app-20b9e4fb.js') }}"></script>
     <script src="{{ asset('bootstrap-5.2.3-dist/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script>

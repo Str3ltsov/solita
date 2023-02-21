@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ApieMusController;
+use App\Http\Controllers\EuProjectsController;
+use App\Http\Controllers\PaslaugosController;
+use App\Http\Controllers\KontaktaiController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ApieMusController::class, 'index'])->name('apieMus');
+Route::get('/apie_mus', [ApieMusController::class, 'index'])->name('apieMus');
+Route::get('/eu_projects', [EuProjectsController::class, 'index'])->name('euProjects');
+Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos');
+Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
