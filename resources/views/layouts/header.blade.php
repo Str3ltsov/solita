@@ -11,22 +11,22 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item mx-md-3">
                         <a class="nav-link @if (Str::contains(url()->current(), 'apie_mus')) active @endif" href="{{ route('apieMus') }}">
-                            {{ __('Apie Mus') }}
+                            {{ $pages[\App\Enums\PageEnum::APIE_MUS] }}
                         </a>
                     </li>
                     <li class="nav-item mx-md-3">
                         <a class="nav-link @if (Str::contains(url()->current(), 'es_projektai')) active @endif" href="{{ route('esProjektai') }}">
-                            {{ __('ES Projektai') }}
+                            {{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}
                         </a>
                     </li>
                     <li class="nav-item mx-md-3">
                         <a class="nav-link @if (Str::contains(url()->current(), 'paslaugos')) active @endif" href="{{ route('paslaugos') }}">
-                            {{ __('Paslaugos') }}
+                            {{ $pages[\App\Enums\PageEnum::PASLAUGOS] }}
                         </a>
                     </li>
                     <li class="nav-item mx-md-3">
                         <a class="nav-link @if (Str::contains(url()->current(), 'kontaktai')) active @endif" href="{{ route('kontaktai') }}">
-                            {{ __('Kontaktai') }}
+                            {{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}
                         </a>
                     </li>
                 </ul>

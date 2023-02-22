@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Enums\PageEnum;
 use App\Traits\PageTextServices;
 
 use Illuminate\Contracts\Foundation\Application;
@@ -19,7 +19,7 @@ class EsProjektaiController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(Page::ES_PROJEKTAI);
+        $pageTexts = $this->getPageTextsByPageId(PageEnum::ES_PROJEKTAI);
 
         return view('es_projektai.index')
             ->with([

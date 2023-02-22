@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Enums\PageEnum;
 use App\Traits\PageTextServices;
 
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class ApieMusController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(Page::APIE_MUS);
+        $pageTexts = $this->getPageTextsByPageId(PageEnum::APIE_MUS);
 
         return view('apie_mus.index')
             ->with([

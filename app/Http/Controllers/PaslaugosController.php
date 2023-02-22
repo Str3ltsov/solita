@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Enums\PageEnum;
 use App\Traits\PageTextServices;
+
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -18,7 +19,7 @@ class PaslaugosController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(Page::PASLAUGOS);
+        $pageTexts = $this->getPageTextsByPageId(PageEnum::PASLAUGOS);
 
         return view('paslaugos.index')
             ->with([

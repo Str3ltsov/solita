@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PageEnum;
 use App\Events\ContactFormSent;
 use App\Http\Requests\CreateContactFormRequest;
 use App\Models\ContactForm;
-
-use App\Models\Page;
 use App\Traits\PageTextServices;
+
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -23,7 +23,7 @@ class KontaktaiController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(Page::KONTAKTAI);
+        $pageTexts = $this->getPageTextsByPageId(PageEnum::KONTAKTAI);
 
         return view('kontaktai.index')
             ->with([
