@@ -17,7 +17,8 @@ class PageSeeder extends Seeder
             ['name' => 'Apie Mus'],
             ['name' => 'ES Projektai'],
             ['name' => 'Paslaugos'],
-            ['name' => 'Kontaktai']
+            ['name' => 'Kontaktai'],
+            ['name' => 'Atsijungti']
         ]);
     }
 }

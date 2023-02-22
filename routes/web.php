@@ -5,6 +5,7 @@ use App\Http\Controllers\EsProjektaiController;
 use App\Http\Controllers\PaslaugosController;
 use App\Http\Controllers\KontaktaiController;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,16 @@ Route::get('/es_projects', [EsProjektaiController::class, 'index'])->name('esPro
 Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos');
 Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
 Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
+
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false
+]);
+
+Route::get('logout', function () {
+    Auth::logout();
+    return back()->with('success', __('Sėkmingai atsijungėte'));
+})->name('getLogout');
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

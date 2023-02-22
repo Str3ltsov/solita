@@ -29,6 +29,17 @@
                             {{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}
                         </a>
                     </li>
+                    @if (auth()->check())
+                        <li class="nav-item mx-md-3">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0">
+                                @csrf
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}
+                                </a>
+                            </form>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
