@@ -6,6 +6,8 @@ use App\Events\ContactFormSent;
 use App\Http\Requests\CreateContactFormRequest;
 use App\Models\ContactForm;
 
+use App\Models\Page;
+use App\Traits\PageTextServices;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -14,12 +16,19 @@ use Illuminate\Http\Request;
 
 class KontaktaiController extends Controller
 {
+    use PageTextServices;
+
     /*
      * Kontaktai page
      */
     public function index(): Factory|View|Application
     {
-        return view('kontaktai.index');
+        $pageTexts = $this->getPageTextsByPageId(Page::KONTAKTAI);
+
+        return view('kontaktai.index')
+            ->with([
+                'pageTexts' => $this->decodePageTexts($pageTexts)
+            ]);
     }
 
     /*

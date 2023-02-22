@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
+use App\Traits\PageTextServices;
+
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -9,11 +12,18 @@ use Illuminate\Contracts\Foundation\Application;
 
 class ApieMusController extends Controller
 {
+    use PageTextServices;
+
     /*
      * Apie mus page
      */
     public function index(): Factory|View|Application
     {
-        return view('apie_mus.index');
+        $pageTexts = $this->getPageTextsByPageId(Page::APIE_MUS);
+
+        return view('apie_mus.index')
+            ->with([
+                'pageTexts' => $this->decodePageTexts($pageTexts)
+            ]);
     }
 }
