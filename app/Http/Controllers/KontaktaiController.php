@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ContactFormSent;
 use App\Http\Requests\CreateContactFormRequest;
 use App\Models\ContactForm;
 
@@ -44,6 +45,11 @@ class KontaktaiController extends Controller
 
         try {
             $this->createContactForm($validated);
+
+            event(new ContactFormSent(
+                $validated['name'], $validated['email'], $validated['topic'], $validated['description']
+            ));
+
             return back()->with('success', __('Forma sėkmingai pateikta'));
         }
         catch (\Exception $exception) {
