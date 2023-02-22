@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\PageEnum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,13 +16,13 @@ class PageTextSeeder extends Seeder
     {
         DB::table('page_texts')->insert([
             [
-                'page_id' => 1,
+                'page_id' => PageEnum::APIE_MUS,
                 'html_text' => htmlentities("
                     <p>UAB \"Solita\" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas.'</p>
                 ", ENT_QUOTES)
             ],
             [
-                'page_id' => 2,
+                'page_id' => PageEnum::ES_PROJEKTAI,
                 'html_text' => htmlentities("
                     <img src=\"images/es_projektai.png\" alt=\"es_projektai\" style=\"width: clamp(250px, 100%, 450px)\">
                     <p>UAB \"Solita\" įgyvendina ES struktūrinėmis lėšomis finansuojamą projektą Nr. 13.1.1-LVPA-K-310-01-0267 \"Programinės įrangos kūrimo užsakymo proceso skaitmenizavimas\". Bendra projekto vertė – <b class=\"text-dark\">90 200,00</b> Eur, iš kurių <b class=\"text-dark\">43 296,00</b> Eur sudaro Europos regioninės plėtros fondo lėšos.</p>
@@ -43,7 +44,7 @@ class PageTextSeeder extends Seeder
                 ", ENT_QUOTES)
             ],
             [
-                'page_id' => 3,
+                'page_id' => PageEnum::PASLAUGOS,
                 'html_text' => htmlentities("
                     <span>Įmonės veiklos sritys:</span>
                     <ul>
@@ -58,7 +59,7 @@ class PageTextSeeder extends Seeder
                 ", ENT_QUOTES)
             ],
             [
-                'page_id' => 4,
+                'page_id' => PageEnum::KONTAKTAI,
                 'html_text' => htmlentities("
                     <span>UAB \"Solita\"</span>
                     <span>Įmonės kodas 304764201</span>

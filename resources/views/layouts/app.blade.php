@@ -23,6 +23,7 @@
     <script src="{{ asset('jquery-3.6.3/jquery-3.6.3.min.js') }}"></script>
     <script src="{{ asset('bootstrap-5.2.3-dist/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script>
+    <script src="{{ asset('ckeditor5-build-classic/ckeditor.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

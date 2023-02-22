@@ -26,6 +26,14 @@ Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos
 Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
 Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
 
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/apie_mus/edit', [ApieMusController::class, 'edit'])->name('editApieMus');
+    Route::patch('/apie_mus/edit', [ApieMusController::class, 'update'])->name('updateApieMus');
+    Route::get('/es_projects/edit', [EsProjektaiController::class, 'edit'])->name('editEsProjektai');
+    Route::get('/paslaugos/edit', [PaslaugosController::class, 'edit'])->name('editPaslaugos');
+    Route::get('/kontaktai/edit', [KontaktaiController::class, 'edit'])->name('editKontaktai');
+});
+
 Auth::routes([
     'register' => false,
     'reset' => false,

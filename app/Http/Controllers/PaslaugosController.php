@@ -14,16 +14,32 @@ class PaslaugosController extends Controller
 {
     use PageTextServices;
 
+    private object $pageText;
+
+    public function __construct()
+    {
+        $this->pageText = $this->getPageTextByPageId(PageEnum::PASLAUGOS);
+    }
+
     /*
      * Paslaugos page
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(PageEnum::PASLAUGOS);
-
         return view('paslaugos.index')
             ->with([
-                'pageTexts' => $this->decodePageTexts($pageTexts)
+                'pageText' => $this->decodePageText($this->pageText)
+            ]);
+    }
+
+    /*
+     * Paslaugos edit page
+     */
+    public function edit(): Factory|View|Application
+    {
+        return view('paslaugos.edit')
+            ->with([
+                'pageText' => $this->decodePageText($this->pageText)
             ]);
     }
 }

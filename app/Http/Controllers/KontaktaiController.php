@@ -18,16 +18,21 @@ class KontaktaiController extends Controller
 {
     use PageTextServices;
 
+    private object $pageText;
+
+    public function __construct()
+    {
+        $this->pageText = $this->getPageTextByPageId(PageEnum::KONTAKTAI);
+    }
+
     /*
      * Kontaktai page
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(PageEnum::KONTAKTAI);
-
         return view('kontaktai.index')
             ->with([
-                'pageTexts' => $this->decodePageTexts($pageTexts)
+                'pageText' => $this->decodePageText($this->pageText)
             ]);
     }
 
@@ -64,5 +69,16 @@ class KontaktaiController extends Controller
         catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
+    }
+
+    /*
+     * Kontaktai edit page
+     */
+    public function edit(): Factory|View|Application
+    {
+        return view('kontaktai.edit')
+            ->with([
+                'pageText' => $this->decodePageText($this->pageText)
+            ]);
     }
 }
