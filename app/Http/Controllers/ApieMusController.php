@@ -43,4 +43,22 @@ class ApieMusController extends Controller
                 'pageText' => $this->decodePageText($this->pageText)
             ]);
     }
+
+    /*
+     * Updates and saves apie mus page texts
+     */
+    public function update(Request $request): RedirectResponse
+    {
+        try {
+            $this->pageText->html_text = $request->html_text;
+            $this->pageText->save();
+
+            return redirect()
+                ->route('apieMus')
+                ->with('success', __('Sėkmingai išsaugota ir atnaujinta'));
+
+        } catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
+    }
 }
