@@ -1,0 +1,41 @@
+
+
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  16. ERROR CSS START
+/*----------------------------------------*/
+
+// ERROR STYLE
+.error {
+    &__content {
+        h2 {
+            font-size: 250px;
+            font-weight: 700;
+            color: var(--clr-theme-1);
+            line-height: 1;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: -webkit-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+            @media #{$md,$lg}{
+                font-size: 200px;
+            }
+            @media #{$sm}{
+                font-size: 150px;
+            }
+            @media #{$xs}{
+                font-size: 120px;
+            }
+        }
+        h3 {
+            font-size: 36px;
+            @media #{$xs}{
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 33px;
+        }
+    }
+}

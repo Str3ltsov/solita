@@ -1,0 +1,272 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+
+
+/*  09. SECTION TITLE CSS START
+/*----------------------------------------*/
+
+// Section title style
+.section__title-one {
+    h2 {
+        font-size: 50px;
+        line-height: 1.2;
+        @media #{$xs,$md,$xl} {
+            font-size: 40px;
+        }
+        @media #{$lg} {
+            font-size: 36px;
+        }
+        @media #{$sm} {
+            font-size: 40px;
+        }
+        @media #{$xs} {
+            font-size: 30px;
+        }
+    }
+    &.s-2 {
+        h2 {
+            color: var(--clr-common-white);
+        }
+    }
+    &.s-3 {
+        h2 {
+            letter-spacing: -1px;
+        }
+    }
+    span {
+        color: var(--clr-theme-1);
+        font-size: 14px;
+        margin-bottom: 15px;
+        display: block;
+        font-weight: var(--bd-fw-sbold);
+        text-transform: capitalize;
+        line-height: 1;
+    }
+}
+
+.section__title-two {
+    span {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        background-image: -webkit-linear-gradient(0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+        font-size: 14px;
+        font-weight: var(--bd-fw-bold);
+        box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
+        padding: 0px 15px;
+        height: 27px;
+        line-height: 27px;
+        display: inline-block;
+        @include border-radius(30px);
+        font-family: var(--bd-ff-heading);
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+    &.s-2 {
+        h2 {
+            letter-spacing: -1.5px;
+            font-size: 50px;
+            @media #{$lg,$md,$sm} {
+                font-size: 40px;
+            }
+            @media #{$xs} {
+                font-size: 36px;
+            }
+        }
+    }
+    &.s-3 {
+        h2 {
+            color: var(--clr-common-white);
+            font-size: 50px;
+            @media #{$lg,$md,$sm} {
+                font-size: 40px;
+            }
+            @media #{$xs} {
+                font-size: 35px;
+            }
+        }
+        p {
+            background-image: linear-gradient(to right, #141f2b, #141f2b, var(--clr-theme-1), var(--clr-theme-3));
+            background-position: 100% 100%;
+            background-size: 300% 100%;
+            color: var(--clr-common-white);
+            font-size: 14px;
+            font-weight: var(--bd-fw-bold);
+            box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.1);
+            padding: 0px 15px;
+            height: 27px;
+            line-height: 27px;
+            display: inline-block;
+            @include border-radius(30px);
+            font-family: var(--bd-ff-heading);
+            text-transform: capitalize;
+        }
+    }
+}
+
+.section__subtitle-3 {
+    p {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        background-image: linear-gradient(90deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+        font-weight: 500;
+        margin-bottom: 20px;
+        -webkit-text-fill-color: transparent;
+    }
+    span {
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 5px;
+            height: 5px;
+            background: var(--clr-theme-1);
+            bottom: -9px;
+            border-radius: 10px;
+            z-index: 2;
+        }
+    }
+}
+
+.gradient__subtitle {
+    display: inline-block;
+    padding-right: 18px;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 40px;
+        height: 1px;
+        left: 100%;
+        bottom: 0;
+        transform: rotate(-45deg) translateY(5px) translateX(-5px);
+        background-image: linear-gradient(to right, var(--clr-theme-1), var(--clr-theme-3));
+        background-position: 100%;
+        background-size: 300% 100%;
+        transform-origin: left;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: -7px;
+        width: 100%;
+        height: 1px;
+        background-image: linear-gradient(to right, var(--clr-theme-1), var(--clr-theme-3), var(--clr-theme-1), var(--clr-theme-3));
+        background-size: 350%;
+    }
+}
+
+.section__title-3 {
+    &.s-2 {
+        h2 {
+            color: var(--clr-common-white);
+        }
+    }
+    h2 {
+        font-size: 50px;
+        @media #{$xl,$lg,$md} {
+            font-size: 40px;
+        }
+        @media #{$sm} {
+            font-size: 36px;
+        }
+        @media #{$xs} {
+            font-size: 36px;
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+// Update CSS Start Here 
+.bd-ud-section-subtitle {
+    span {
+        background: linear-gradient(90deg, var(--clr-theme-1) -1.84%, var(--clr-theme-4) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-size: 18px;
+        font-weight: var(--bd-fw-sbold);
+        position: relative;
+        display: inline-block;
+        padding-right: 22px;
+        &::before{
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(90deg, var(--clr-theme-1) -1.84%, var(--clr-theme-4) 100%);
+            position: absolute;
+            border-radius: 50%;
+            top: 57%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+    }
+}
+
+.bd-ud-section-title {
+    h2 {
+        font-size: var(--bd-fs-h2);
+        @media #{$xl, $lg, $md, $sm, $xs} {
+            font-size: 40px;
+            br {
+                display: none;
+            }
+        }
+        @media #{$xs} {
+            font-size: 30px;
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+.bd-ud-section-sm-title {
+    h3 {
+        font-size: 30px;
+        @media #{$xl, $lg, $md, $sm, $xs} {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+.bd-ud-section-gradient{
+    &.two{
+        padding-left: 24px;
+        &::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(90deg, var(--clr-theme-1) -1.84%, var(--clr-theme-4) 100%);
+            position: absolute;
+            border-radius: 50%;
+            top: 57%;
+            transform: translateY(-50%);
+            left: 0;
+        }
+    }
+}
+
+.bd-ud-section-subtitle2 {
+    span {
+        font-weight: var(--bd-fw-medium);
+        font-size: 16px;
+        color: var(--clr-text-23);
+    }
+}
+
+
+.dark{
+    .bd-ud-section-title {
+        h2 {
+            color: var(--clr-common-white);
+        }
+    }
+}

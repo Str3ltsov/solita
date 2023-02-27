@@ -1,0 +1,321 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+
+
+/*  15. CTA CSS START
+/*----------------------------------------*/
+
+// CTA STYLE
+.cta {
+    &__title {
+        &-wrapper {
+            max-width: 615px;
+            line-height: 1;
+        }
+    }
+    &__paragraph {
+        color: var(--clr-text-9);
+        margin-bottom: 0;
+    }
+    &__contact {
+        &-inner {
+            padding: 60px 0px 52px 0px;
+            background-color: var(--clr-common-white);
+            text-align: center;
+            border-radius: 10px 10px 0px 0px;
+        }
+        &-icon {
+            margin-bottom: 35px;
+            figure {
+                position: relative;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 100px;
+                    height: 100px;
+                    border: 1px solid #f3f3f3;
+                    border-radius: 50px;
+                    left: 50%;
+                    transform: translate(-50%, -15px);
+                    z-index: 2;
+                }
+            }
+            i {
+                position: relative;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                text-align: center;
+                border-radius: 50px;
+                color: var(--clr-common-white);
+                font-size: 22px;
+                background-image: linear-gradient(to right, #141f2b, #141f2b, var(--clr-theme-1), var(--clr-theme-3));
+                background-position: 100% 100%;
+                background-size: 300% 100%;
+                box-shadow: 0px 16px 32px 0px rgba(69, 129, 206, 0.3);
+                z-index: 2;
+            }
+        }
+        &-content {
+            span {
+                font-size: 14px;
+            }
+            h3 {
+                a {
+                    font-size: 24px;
+                    &:hover {
+                        color: var(--clr-theme-1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Updated CTA CSS Start Here 
+.bd-ud {
+    &-cta {
+        &-technology {
+            &-item {
+                max-width: 100%;
+            }
+            &-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+                @media #{$xl, $lg, $md, $sm, $xs} {
+                    gap: 25px;
+                }
+            }
+        }
+        &-padding {
+            padding-top: 120px;
+            padding-bottom: 230px;
+        }
+        &-action {
+            &-img {
+                img {
+                    @include border-radius(10px);
+                }
+            }
+            &-content {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--clr-bg-1);
+                    opacity: 0.25;
+                    @include border-radius(10px);
+                }
+            }
+            &-overlay {
+                position: absolute;
+                right: 0;
+                text-align: center;
+                left: 0;
+                bottom: 0;
+            }
+            &-phone {
+                background: linear-gradient(180deg, var(--clr-theme-1) 0%, var(--clr-theme-4) 100%);
+                box-shadow: 0px 0px 0px 12px rgba(255, 255, 255, 0.25);
+                width: 92px;
+                height: 92px;
+                line-height: 92px;
+                @include border-radius(50%);
+                margin-bottom: 90px;
+                margin: auto;
+                margin-bottom: 90px;
+                @media #{$xs} {
+                    margin-bottom: 50px;
+                }
+                @media #{$xxs} {
+                    margin-bottom: 20px;
+                    width: 70px;
+                    height: 70px;
+                    line-height: 70px;
+                }
+            }
+            &-text {
+                @media #{$xxs} {
+                    margin-bottom: 25px;
+                }
+                span {
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    color: var(--clr-common-white);
+                    font-weight: var(--bd-fw-sbold);
+                    display: block;
+                    margin-bottom: 18px;
+                    @media #{$xxs} {
+                        margin-bottom: 5px;
+                    }
+                }
+                a {
+                    font-size: 35px;
+                    color: var(--clr-common-white);
+                    font-weight: var(--bd-fw-sbold);
+                    @media #{$xxs} {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        &-touch {
+            background: var(--clr-common-white);
+            border-radius: 0px 0px 10px 10px;
+            height: 87px;
+            line-height: 87px;
+            @include transition(0.3s);
+            a {
+                background: linear-gradient(180deg, var(--clr-theme-1) 0%, var(--clr-theme-4) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 600;
+                font-size: 18px;
+                i {
+                    margin-left: 10px;
+                    font-size: 14px;
+                }
+            }
+            &:hover{
+                background: var(--clr-theme-1);
+                a{
+                    background: linear-gradient(180deg, var(--clr-common-white) 0%, var(--clr-common-white) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+            }
+        }
+        &-content{
+            p {
+                color: var(--clr-text-20);
+            }
+        }
+    }
+}
+
+
+// CTA 4 CSS 
+.cta4{
+    &-wrapper{
+        background-color: #161A33;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    &-shape1, &-shape2{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    &-content{
+        position: relative;
+        z-index: 5;
+        .blue-btn{
+            a {
+                font-size: 25px;
+                border-radius: 45px;
+                i{
+                    margin-left: 0;
+                }
+                &::after{
+                    background-color: var(--clr-common-white);
+                }
+                &:hover{
+                    color: var(--clr-theme-1);
+                }
+            }
+        }
+    }
+}
+.cta4-shapebox div img {
+	width: 100%;
+}
+
+
+// Cta 5 CSS 
+.cta5_area {
+    border-radius: 10px;
+}
+.cta5_title {
+    font-size: 55px;
+    line-height: 1.2;
+    color: #161A33;
+    font-weight: 500;
+    text-transform: capitalize;
+    @media #{$xxxl} {
+        font-size: 50px;
+        br{
+            display: none;
+        }
+    }
+    @media #{$xxl, $xl, $lg, $md,} {
+        font-size: 40px;
+        br{
+            display: none;
+        }
+    }
+    @media #{$sm, $xs} {
+        font-size: 30px;
+        br{
+            display: none;
+        }
+    }
+}
+.cta5_icon {
+    a {
+        height: 70px;
+        width: 100px;
+        border-radius: 20px;
+        background: var(--clr-theme-1);
+        display: inline-block;
+        text-align: center;
+        line-height: 70px;
+        transition: .3s;
+        &:hover {
+            background: #161A33;
+        }
+    }
+}
+
+.cta5_area-wrapper{
+    padding-left: 130px;
+    padding-right: 135px;
+    position: relative;
+    border-radius: 10px;
+    @media #{$xl, $lg, $md} {
+        padding-left: 80px;
+        padding-right: 83px;
+    }
+    @media #{$sm, $xs} {
+        padding-left: 40px;
+        padding-right: 43px;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #F4F4F4;
+        box-shadow: 0px 4px 80px 10px rgba(14, 132, 225, 0.06);
+        border-radius: 10px;
+        z-index: -1;
+    }
+}
+
+
+.dark{
+    .cta5_area-wrapper::before {
+        background: #090C1C;
+    }
+    .cta5_title {
+        color: var(--clr-common-white);
+    }
+}

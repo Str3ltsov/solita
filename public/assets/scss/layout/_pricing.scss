@@ -1,0 +1,241 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  27. PRICING CSS START
+/*----------------------------------------*/
+
+// PRICE TAB
+.pricing-tab {
+	.nav-tabs {
+		border: none;
+		.nav-link {
+			margin-bottom: 0;
+			border: 0;
+		}
+	}
+	.nav {
+		.nav-item {
+			padding-left: 0px;
+			.nav-link {
+				padding: 7px 60px;
+				background: transparent;
+				border-radius: 0;
+				-webkit-border-radius: 0;
+				-moz-border-radius: 0;
+				-ms-border-radius: 0;
+				-o-border-radius: 0;
+				font-weight: 600;
+				text-transform: capitalize;
+				color: #f000;
+				position: relative;
+				outline: none;
+				font-size: 16px;
+				border: none;
+				z-index: 2;
+				color: var(--clr-common-heading);
+				&.active {
+				color: var(--clr-theme-1);
+				}
+				&.active {
+					&::after {
+						right: 10px;
+					}
+				}
+				&::after {
+					position: absolute;
+					content: "";
+					right: -32px;
+					top: 50%;
+					-webkit-transform: translateY(-50%);
+					-moz-transform: translateY(-50%);
+					-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
+					width: 22px;
+					height: 22px;
+					-webkit-border-radius: 50%;
+					-moz-border-radius: 50%;
+					border-radius: 50%;
+					background-image: linear-gradient(to right, var(--clr-theme-3), var(--clr-theme-1), var(--clr-theme-1), var(--clr-theme-3));
+					background-position: 100% 100%;
+					background-size: 300% 100%;
+					z-index: 1;
+				}
+				&::before {
+					position: absolute;
+					content: "";
+					right: 0px;
+					top: 50%;
+					transform: translateY(-50%) translateX(50%);
+					background: var(--clr-border-2);
+					width: 80px;
+					height: 40px;
+					-webkit-border-radius: 11px;
+					-moz-border-radius: 11px;
+					border-radius: 20px;
+					border: 1px solid var(--clr-theme-1);
+				}
+			}
+			&:last-child {
+				.nav-link {
+					padding-right: 0;
+					&::after {
+						display: none;
+					}
+					&::before {
+						display: none;
+					}
+				}
+			}
+			&:first-child {
+				.nav-link {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
+
+// MEMBERSHIP STYLE
+.membership {
+	&__box {
+		padding: 40px 40px;
+		box-shadow: 0px 10px 40px rgba(12, 29, 74, 0.08);
+		border-radius: 8px;
+		background: var(--clr-common-white);
+		border: 1px solid #ddd;
+		overflow: hidden;
+		position: relative;
+		height: 480px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@media #{$xl,$xs} {
+			padding: 40px 30px;
+		}
+	}
+	&__tittle {
+		p {
+			color: #f000;
+			margin-bottom: 50px;
+		}
+	}
+	&__info {
+		h4 {
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 15px;
+		}
+		span {
+			font-size: 28px;
+			font-weight: 900;
+			color: var(--clr-theme-1);
+		}
+	}
+	&__price {
+		p {
+			font-size: 15px;
+			color: #f000;
+		}
+	}
+	&__list {
+		padding: 15px 0;
+		ul {
+			li {
+				margin-bottom: 5px;
+				i {
+					color: var(--clr-theme-1);
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+}
+.Popular {
+	&__plan {
+		position: absolute;
+		background: var(--clr-theme-1)-2;
+		top: -30px;
+		right: -84px;
+		font-size: 14px;
+		font-weight: 600;
+		color: #f000;
+		text-align: center;
+		padding: 62px 72px 6px;
+		transform: rotate(48deg);
+		span {
+			width: 70px;
+			display: inline-block;
+			font-size: 14px;
+			line-height: 16px;
+			font-weight: 600;
+			font-family: "Raleway", sans-serif;
+		}
+	}
+}
+
+// PRICING STYLE
+.bd-pricing {
+    background: var(--clr-common-white);
+    padding: 45px 50px 50px 50px;
+    @include transition(0.3s);
+	@include border-radius(6px);
+    @media #{$lg,$md,$xs} {
+        padding: 45px 25px 50px 25px;
+    }
+    &-subtitle {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--clr-common-heading);
+        @include transition(0.3s);
+		text-transform: uppercase;
+    }
+    &-price {
+        font-size: 60px;
+        line-height: 1.16;
+        color: var(--clr-theme-1);
+        @include transition(0.3s);
+		@media #{$xs,$lg}{
+			font-size: 50px;
+		}
+        span {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--clr-common-heading);
+            @include transition(0.3s);
+        }
+    }
+    ul {
+        li {
+            font-size: 16px;
+            line-height: 1;
+            list-style: none;
+            margin-bottom: 20px;
+            @include transition(0.3s);
+            i {
+                font-size: 16px;
+                color: var(--clr-theme-1);
+                margin-right: 13px;
+                @include transition(0.3s);
+            }
+        }
+    }
+    &-btn {
+        .theme-btn,
+        .theme-btn-black {
+            width: 100%;
+        }
+    }
+    &.bd-pricing-active {
+        background: var(--clr-theme-1);
+        .bd-pricing-subtitle,
+        .bd-pricing-price,
+        .bd-pricing-price span,
+        ul li,
+        ul li i {
+            color: var(--clr-common-white);
+        }
+        .theme-btn {
+            background: var(--clr-body-heading);
+        }
+    }
+}
