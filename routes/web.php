@@ -40,6 +40,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/paslaugos/edit', [PaslaugosController::class, 'edit'])->name('editPaslaugos');
     Route::patch('/paslaugos/edit', [PaslaugosController::class, 'update'])->name('updatePaslaugos');
     Route::get('/kontaktai/edit', [KontaktaiController::class, 'edit'])->name('editKontaktai');
+    Route::patch('/kontaktai/edit', [KontaktaiController::class, 'update'])->name('updateKontaktai');
 });
 
 
