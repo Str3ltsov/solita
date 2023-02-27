@@ -18,16 +18,21 @@ class KontaktaiController extends Controller
 {
     use PageTextServices;
 
+    private object $pageText;
+
+    public function __construct()
+    {
+        $this->pageText = $this->getPageTextByPageId(PageEnum::KONTAKTAI);
+    }
+
     /*
      * Kontaktai page
      */
     public function index(): Factory|View|Application
     {
-        $pageTexts = $this->getPageTextsByPageId(PageEnum::KONTAKTAI);
-
         return view('kontaktai.index')
             ->with([
-                'pageTexts' => $this->decodePageTexts($pageTexts)
+                'pageText' => $this->decodePageText($this->pageText)
             ]);
     }
 
@@ -62,6 +67,35 @@ class KontaktaiController extends Controller
             return back()->with('success', __('Forma sėkmingai pateikta'));
         }
         catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
+    }
+
+    /*
+     * Kontaktai edit page
+     */
+    public function edit(): Factory|View|Application
+    {
+        return view('kontaktai.edit')
+            ->with([
+                'pageText' => $this->decodePageText($this->pageText)
+            ]);
+    }
+
+    /*
+ * Updates and saves kontaktai page texts
+ */
+    public function update(Request $request): RedirectResponse
+    {
+        try {
+            $this->pageText->html_text = $request->html_text;
+            $this->pageText->save();
+
+            return redirect()
+                ->route('kontaktai')
+                ->with('success', __('Sėkmingai išsaugota ir atnaujinta'));
+
+        } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
     }

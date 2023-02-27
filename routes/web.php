@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+ * Guest routes
+ */
 Route::get('/', [ApieMusController::class, 'index'])->name('apieMus');
 Route::get('/apie_mus', [ApieMusController::class, 'index'])->name('apieMus');
 Route::get('/es_projects', [EsProjektaiController::class, 'index'])->name('esProjektai');
@@ -26,6 +29,24 @@ Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos
 Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
 Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
 
+/*
+ * Admin routes
+ */
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/apie_mus/edit', [ApieMusController::class, 'edit'])->name('editApieMus');
+    Route::patch('/apie_mus/edit', [ApieMusController::class, 'update'])->name('updateApieMus');
+    Route::get('/es_projektai/edit', [EsProjektaiController::class, 'edit'])->name('editEsProjektai');
+    Route::patch('/es_projektai/edit', [EsProjektaiController::class, 'update'])->name('updateEsProjektai');
+    Route::get('/paslaugos/edit', [PaslaugosController::class, 'edit'])->name('editPaslaugos');
+    Route::patch('/paslaugos/edit', [PaslaugosController::class, 'update'])->name('updatePaslaugos');
+    Route::get('/kontaktai/edit', [KontaktaiController::class, 'edit'])->name('editKontaktai');
+    Route::patch('/kontaktai/edit', [KontaktaiController::class, 'update'])->name('updateKontaktai');
+});
+
+
+/*
+ * Auth routes
+ */
 Auth::routes([
     'register' => false,
     'reset' => false,
