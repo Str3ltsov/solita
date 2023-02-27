@@ -29,8 +29,8 @@ Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->na
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/apie_mus/edit', [ApieMusController::class, 'edit'])->name('editApieMus');
     Route::patch('/apie_mus/edit', [ApieMusController::class, 'update'])->name('updateApieMus');
-    Route::get('/es_projects/edit', [EsProjektaiController::class, 'edit'])->name('editEsProjektai');
-    Route::patch('/es_projects/edit', [EsProjektaiController::class, 'update'])->name('updateEsProjektai');
+    Route::get('/es_projektai/edit', [EsProjektaiController::class, 'edit'])->name('editEsProjektai');
+    Route::patch('/es_projektai/edit', [EsProjektaiController::class, 'update'])->name('updateEsProjektai');
     Route::get('/paslaugos/edit', [PaslaugosController::class, 'edit'])->name('editPaslaugos');
     Route::get('/kontaktai/edit', [KontaktaiController::class, 'edit'])->name('editKontaktai');
 });

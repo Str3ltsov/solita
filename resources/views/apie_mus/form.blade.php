@@ -2,8 +2,8 @@
     @csrf
     @method('PATCH')
     <textarea class="form-control text-muted" name="html_text" id="editor">
-                {!! $pageText->html_text !!}
-            </textarea>
+        {!! $pageText->html_text !!}
+    </textarea>
     <div class="d-flex gap-2">
         <button type="submit" class="btn btn-primary px-4 py-3">
             {{ __('Atnaujinti ir Išsaugoti') }}

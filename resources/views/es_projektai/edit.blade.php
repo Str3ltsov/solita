@@ -5,6 +5,6 @@
         @include('messages')
     </div>
     <main class="container d-flex flex-column justify-content-center gap-3" style="min-height: 70vh">
-        @include('apie_mus.form')
+        @include('es_projektai.form')
     </main>
 @endsection
