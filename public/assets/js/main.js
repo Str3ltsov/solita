@@ -41,7 +41,7 @@
 	Brand Five Js
 	location-item Map Js
 	related post js
-	
+
 ****************************************************/
 
 (function ($) {
@@ -102,10 +102,10 @@
 	});
 
 	// Data Css js
-	$("[data-background").each(function () {
+	$("[data-background]").each(function () {
 		$(this).css("background-image", "url( " + $(this).attr("data-background") + "  )");
 	});
-	
+
 	$("[data-width]").each(function () {
 		$(this).css("width", $(this).attr("data-width"));
 	});
@@ -113,7 +113,7 @@
 	$("[data-bg-color]").each(function () {
         $(this).css("background-color", $(this).attr("data-bg-color"));
     });
- 
+
 	//  Hero active Js
 	if (jQuery(".hero__active").length > 0) {
 		let sliderActive1 = ".hero__active";
@@ -319,7 +319,7 @@
 		spaceBetween: 50,
 		loop: true,
 		observer: true,
-		observeParents: true,	
+		observeParents: true,
 		autoplay: {
 			delay: 3000,
 		},
@@ -457,7 +457,7 @@
 			},
 		},
 	});
-	
+
 	// Service Slider Js
 	var services = new Swiper('.services__slider-active', {
 		slidesPerView: 4,
@@ -559,7 +559,7 @@
 			},
 		},
 	});
-	
+
 	/* ------------ Updated Js List ----------------------- */
 	// Sticky Header Js
 	windowOn.on('scroll', function () {
@@ -580,7 +580,7 @@
 		}
 	});
 
-	// Nice Select Js 
+	// Nice Select Js
 	$('select').niceSelect();
 
 	// Search form Js
@@ -656,7 +656,7 @@
 			breakpoint: 768,
 			settings: {
 				vertical: false,
-				
+
 			}
 		  },
 			{
@@ -667,8 +667,8 @@
 			}
 		]
 	  });
-	
-	// Update Team Js 
+
+	// Update Team Js
 	var udTeam = new Swiper('.bd-ud-team-active', {
 		slidesPerView: 4,
 		spaceBetween: 30,
@@ -777,7 +777,7 @@
 		]
 	  });
 
-	// Services Details Circle Js 
+	// Services Details Circle Js
 	  $("#percentage").waypoint(function () {
 		// circle-1
 		$('#circle-1').circleProgress({
@@ -790,7 +790,7 @@
 		}).on('circle-animation-progress', function (event, progress) {
 			$(this).find('.counter_percentage').html(Math.round(75 * progress) + '<i>%</i>');
 		});
-	
+
 		$('#circle-2').circleProgress({
 			value: 0.95,
 			size: 90,
@@ -801,11 +801,11 @@
 		}).on('circle-animation-progress', function (event, progress) {
 			$(this).find('.counter_percentage').html(Math.round(95 * progress) + '<i>%</i>');
 		});
-	
+
 	}, {
 		offset: 'bottom-in-view'
 	});
-	
+
 	// menu-last js
 	$(".bd-ud-main-menu nav > ul > li, .main-menu nav > ul > li").slice(-4).addClass("menu-last");
 
@@ -818,7 +818,7 @@
 		$(".et-hero__contact-wrapper").removeClass("active");
 	});
 
-	// Brand Four Js 
+	// Brand Four Js
 	var brandFour = new Swiper('.brand4-slider-active', {
 	slidesPerView: 6,
 	spaceBetween: 50,
@@ -853,7 +853,7 @@
 		},
 	});
 
-	// Brand Five Js 
+	// Brand Five Js
 	var brandFive = new Swiper('.brand5-slider-active', {
 	slidesPerView: 4,
 	spaceBetween: 50,

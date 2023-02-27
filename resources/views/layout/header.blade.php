@@ -104,9 +104,9 @@
                                     <li class="menu-last">
                                         <a href="{{ route('kontaktai') }}">{{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}</a>
                                     </li>
-                                    @if (auth()->check())
-                                        <li class="menu-last">
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0 menu-last">
+                                    @auth
+                                        <li class="menu-last d-lg-none">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0">
                                                 @csrf
                                                 <a href="{{ route('logout') }}"
                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -114,7 +114,7 @@
                                                 </a>
                                             </form>
                                         </li>
-                                    @endif
+                                    @endauth
                                 </ul>
                             </nav>
                         </div>
@@ -125,16 +125,30 @@
                     <div class="col-xl-5 col-lg-3 col-8">
                         <div class="bd-ud-header-bottom-cta">
                             <div class="bd-ud-header-bottom-cta-wrapper d-flex align-items-center justify-content-end">
+                                @auth
+                                    <span class="text-white d-none d-lg-inline">{{ __('Prisijungęs kaip adminas') }}:</span>
+                                @endauth
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
-                                    <a class="bd-ud-btn" href="{{ route('kontaktai') }}">
-                                        {{ __('Susisiekite su mumis') }}
-                                        <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
-                                    </a>
+                                    @guest
+                                        <a class="bd-ud-btn" href="{{ route('kontaktai') }}">
+                                            {{ __('Susisiekite su mumis') }}
+                                            <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
+                                        </a>
+                                    @else
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0 menu-last">
+                                            @csrf
+                                            <a class="bd-ud-btn" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}
+                                                <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
+                                            </a>
+                                        </form>
+                                    @endguest
                                 </div>
                                 <div class="bd-ud-header-bottom-cta-item d-xl-none">
                                     <div class="bd-ud-header__toggle">
                                         <button class="sidebar__toggle">
-                                            <img src="assets/img/icon/svg/hambergar.svg" alt="hambergar">
+                                            <img src="{{ asset('assets/img/icon/svg/hambergar.svg') }}" alt="hambergar">
                                         </button>
                                     </div>
                                 </div>

@@ -12,6 +12,11 @@
                         </button>
                     </div>
                 </div>
+                @auth
+                    <div class="offcanvas__contact mt-30 mb-20">
+                        <span class="text-white">{{ __('Prisijungęs kaip adminas') }}:</span>
+                    </div>
+                @endauth
                 <div class="mobile-menu fix mb-40"></div>
                 <div class="offcanvas__contact mt-30 mb-20">
                     <h4>{{ __('Kontaktinė Info') }}</h4>

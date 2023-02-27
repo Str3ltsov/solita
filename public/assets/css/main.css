@@ -3989,16 +3989,16 @@ body.dark {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .bd-ud-header-middle-info ul li:first-child {
-    display: inline-block;
+    display: none;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .bd-ud-header-middle-info ul li:nth-child(2) {
-    /*margin-left: 0;*/
-    /*padding-left: 0;*/
+    margin-left: 0;
+    padding-left: 0;
   }
   .bd-ud-header-middle-info ul li:nth-child(2)::before {
-    display: inline-block;
+    display: none;
   }
 }
 .bd-ud-header-middle-info ul li::before {
