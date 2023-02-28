@@ -39,6 +39,7 @@ class CreateContactFormRequest extends FormRequest
         return [
             'name.required' => __('Vardo laukas yra privalomas.'),
             'email.required' => __('El. pašto laukas yra privalomas.'),
+            'email.email' => __('El. pašto lauke turi būti galiojantis el. pašto adresas.'),
             'topic.required' => __('Temos laukas yra privalomas.')
         ];
     }

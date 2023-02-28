@@ -61,7 +61,7 @@ class KontaktaiController extends Controller
             $this->createContactForm($validated);
 
             event(new ContactFormSent(
-                $validated['name'], $validated['email'], $validated['topic'], $validated['description']
+                $validated['name'], $validated['email'], $validated['topic'], $validated['description'] ?? NULL
             ));
 
             return back()->with('success', __('Forma sėkmingai pateikta'));
