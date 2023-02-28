@@ -21,7 +21,7 @@
 {{--            @include('kontaktai.forms.contact_form')--}}
 {{--        </div>--}}
 {{--    </main>--}}
-    <section class="contact__area pt-120 pb-60">
+    <section class="contact__area pt-100 pb-60">
         <div class="container">
             @include('messages')
             <div class="row wow fadeInUp mt-50" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">

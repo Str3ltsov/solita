@@ -11,7 +11,7 @@
         </div>
         <div class="col-lg-6">
             <div class="contact__from-input">
-                <input type="text" name="email" placeholder="{{ __('El. paštas *') }}" class="mb-1 @error('topic') is-invalid @enderror">
+                <input type="email" name="email" placeholder="{{ __('El. paštas *') }}" class="mb-1 @error('topic') is-invalid @enderror">
                 @error('email')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
