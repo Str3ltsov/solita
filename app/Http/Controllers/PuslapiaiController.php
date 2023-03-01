@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdatePageRequest;
 use App\Traits\PageTextServices;
+
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class PuslapiaiController extends Controller
 {
     use PageTextServices;
 

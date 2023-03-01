@@ -145,7 +145,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link @if (str_contains(url()->current(), 'pranesimai')) active @endif">
+                        <a href="{{ route('pranesimai.index') }}" class="nav-link @if (str_contains(url()->current(), 'pranesimai')) active @endif">
                             <i class="nav-icon far fa-envelope"></i>
                             <p>
                                 {{ __('Pranešimai') }}

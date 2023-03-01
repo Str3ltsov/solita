@@ -2,36 +2,33 @@
     <thead>
     <tr>
         <th class="sorting sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID">{{ __('ID') }}</th>
-        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Pavadinimas">{{ __('Pavadinimas') }}</th>
-{{--        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Tekstas">{{ __('Tekstas') }}</th>--}}
-        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Atnaujinta data" style="">{{ __('Atnaujinta data') }}</th>
-        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Veiksmai" style="">{{ __('Veiksmai') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Vardass">{{ __('Vardas') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="El. paštas">{{ __('El. paštas') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Tema">{{ __('Tema') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Aprašymas">{{ __('Aprašymas') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Sukūrimo data">{{ __('Sukūrimo data') }}</th>
     </tr>
     </thead>
     <tbody>
-        @foreach($pages as $page)
+        @foreach($messages as $message)
             <tr>
-                <td class="dtr-control sorting_1" tabindex="0">{{ $page->id }}</td>
-                <td>{{ $page->page->name }}</td>
-{{--                                <td>{!! $page->html_text ?? '-' !!}</td>--}}
-                <td style="">{{ $page->updated_at ? $page->updated_at->format('Y-m-d H:i') : '-' }}</td>
-                <td style="">
-                    <div class="d-flex gap-3">
-                        <a href="{{ route('puslapiai.edit', $page->id) }}">
-                            <i class="fa-solid fa-pen-to-square text-dark"></i>
-                        </a>
-                    </div>
-                </td>
+                <td class="dtr-control sorting_1" tabindex="0">{{ $message->id }}</td>
+                <td>{{ $message->name }}</td>
+                <td>{{ $message->email }}</td>
+                <td>{{ $message->topic }}</td>
+                <td>{{ $message->description }}</td>
+                <td>{{ $message->created_at ? $message->created_at->format('Y-m-d H:i') : '-' }}</td>
             </tr>
         @endforeach
     </tbody>
     <tfoot>
     <tr>
         <th rowspan="1" colspan="1">{{ __('ID') }}</th>
-        <th rowspan="1" colspan="1">{{ __('Pavadinimas') }}</th>
-{{--        <th rowspan="1" colspan="1">{{ __('Tekstas') }}</th>--}}
-        <th rowspan="1" colspan="1" style="">{{ __('Atnaujinta data') }}</th>
-        <th rowspan="1" colspan="1" style="">{{ __('Veiksmai') }}</th>
+        <th rowspan="1" colspan="1">{{ __('Vardas') }}</th>
+        <th rowspan="1" colspan="1">{{ __('El. paštas') }}</th>
+        <th rowspan="1" colspan="1">{{ __('Tema') }}</th>
+        <th rowspan="1" colspan="1">{{ __('Aprašymas') }}</th>
+        <th rowspan="1" colspan="1">{{ __('Sukūrimo data') }}</th>
     </tr>
     </tfoot>
 </table>
