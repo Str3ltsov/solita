@@ -16,9 +16,26 @@
 {{--                                <td>{!! $page->html_text ?? '-' !!}</td>--}}
                 <td style="">{{ $page->updated_at ? $page->updated_at->format('Y-m-d H:i') : '-' }}</td>
                 <td style="">
-                    <div class="d-flex gap-3">
+                    <div class="d-flex">
+                        @if ($loop->index === 0)
+                            <a href="{{ route('apieMus')}}">
+                                <i class="fa-solid fa-eye text-dark"></i>
+                            </a>
+                        @elseif ($loop->index === 1)
+                            <a href="{{ route('esProjektai')}}">
+                                <i class="fa-solid fa-eye text-dark"></i>
+                            </a>
+                        @elseif ($loop->index === 2)
+                            <a href="{{ route('paslaugos')}}">
+                                <i class="fa-solid fa-eye text-dark"></i>
+                            </a>
+                        @elseif ($loop->index === 3)
+                            <a href="{{ route('kontaktai')}}">
+                                <i class="fa-solid fa-eye text-dark"></i>
+                            </a>
+                        @endif
                         <a href="{{ route('puslapiai.edit', $page->id) }}">
-                            <i class="fa-solid fa-pen-to-square text-dark"></i>
+                            <i class="fa-solid fa-pen-to-square text-dark ml-2"></i>
                         </a>
                     </div>
                 </td>
