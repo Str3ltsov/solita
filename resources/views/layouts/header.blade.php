@@ -11,22 +11,22 @@
 {{--                <ul class="navbar-nav mb-2 mb-lg-0">--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'apie_mus')) active @endif" href="{{ route('apieMus') }}">--}}
-{{--                            {{ $pages[\App\Enums\PageEnum::APIE_MUS] }}--}}
+{{--                            {{ $puslapiai[\App\Enums\PageEnum::APIE_MUS] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'es_projektai')) active @endif" href="{{ route('esProjektai') }}">--}}
-{{--                            {{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}--}}
+{{--                            {{ $puslapiai[\App\Enums\PageEnum::ES_PROJEKTAI] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'paslaugos')) active @endif" href="{{ route('paslaugos') }}">--}}
-{{--                            {{ $pages[\App\Enums\PageEnum::PASLAUGOS] }}--}}
+{{--                            {{ $puslapiai[\App\Enums\PageEnum::PASLAUGOS] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'kontaktai')) active @endif" href="{{ route('kontaktai') }}">--}}
-{{--                            {{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}--}}
+{{--                            {{ $puslapiai[\App\Enums\PageEnum::KONTAKTAI] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    @if (auth()->check())--}}
@@ -35,7 +35,7 @@
 {{--                                @csrf--}}
 {{--                                <a class="nav-link" href="{{ route('logout') }}"--}}
 {{--                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">--}}
-{{--                                    {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}--}}
+{{--                                    {{ $puslapiai[\App\Enums\PageEnum::ATSIJUNGTI] }}--}}
 {{--                                </a>--}}
 {{--                            </form>--}}
 {{--                        </li>--}}
@@ -110,7 +110,7 @@
                                                 @csrf
                                                 <a href="{{ route('logout') }}"
                                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                    {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}
+                                                    {{ __('Atsijungti') }}
                                                 </a>
                                             </form>
                                         </li>
@@ -126,7 +126,7 @@
                         <div class="bd-ud-header-bottom-cta">
                             <div class="bd-ud-header-bottom-cta-wrapper d-flex align-items-center justify-content-end">
                                 @auth
-                                    <span class="text-white d-none d-lg-inline">{{ __('Prisijungęs kaip adminas') }}:</span>
+                                    <span class="text-white d-none d-xl-inline">{{ __('Prisijungęs kaip adminas') }}:</span>
                                 @endauth
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
                                     @guest
@@ -135,14 +135,10 @@
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>
                                     @else
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0 menu-last">
-                                            @csrf
-                                            <a class="bd-ud-btn" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}
-                                                <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
-                                            </a>
-                                        </form>
+                                        <a class="bd-ud-btn" href="{{ route('puslapiai.index') }}">
+                                            {{ __('Admino Skydas') }}
+                                            <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
+                                        </a>
                                     @endguest
                                 </div>
                                 <div class="bd-ud-header-bottom-cta-item d-xl-none">

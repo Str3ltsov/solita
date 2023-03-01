@@ -13,7 +13,7 @@ class PageSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('pages')->insert([
+        DB::table('puslapiai')->insert([
             ['name' => 'Apie Mus'],
             ['name' => 'ES Projektai'],
             ['name' => 'Paslaugos'],

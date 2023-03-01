@@ -4,6 +4,7 @@ use App\Http\Controllers\ApieMusController;
 use App\Http\Controllers\EsProjektaiController;
 use App\Http\Controllers\PaslaugosController;
 use App\Http\Controllers\KontaktaiController;
+use App\Http\Controllers\PagesController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/paslaugos/edit', [PaslaugosController::class, 'update'])->name('updatePaslaugos');
     Route::get('/kontaktai/edit', [KontaktaiController::class, 'edit'])->name('editKontaktai');
     Route::patch('/kontaktai/edit', [KontaktaiController::class, 'update'])->name('updateKontaktai');
+    Route::resource('puslapiai', PagesController::class)->only(['index', 'edit', 'update']);
 });
 
 

@@ -53,8 +53,8 @@
 {{--    <script src="{{ asset('build/assets/app-20b9e4fb.js') }}"></script>--}}
 {{--    <script src="{{ asset('jquery-3.6.3/jquery-3.6.3.min.js') }}"></script>--}}
 {{--    <script src="{{ asset('bootstrap-5.2.3-dist/js/bootstrap.bundle.js') }}"></script>--}}
+{{--<script src="{{ asset('ckeditor5-36.0.1-8lty87utdzw3/build/ckeditor.js') }}"></script>--}}
 <script src="{{ asset('fontawesome-free-6.3.0-web/js/all.js') }}"></script>
-<script src="{{ asset('ckeditor5-36.0.1-8lty87utdzw3/build/ckeditor.js') }}"></script>
 <script src="{{ asset('assets/js/vendor/jquery.js') }}"></script>
 <script src="{{ asset('assets/js/vendor/waypoints.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap-bundle.js') }}"></script>
@@ -74,13 +74,6 @@
 <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
 <script src="{{ asset('assets/js/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
-@auth
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {})
-            .catch(error => console.error(error));
-    </script>
-@endauth
 @stack('scripts')
 </body>
 </html>

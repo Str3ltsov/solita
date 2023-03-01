@@ -19,7 +19,7 @@ class PageText extends Model
      */
     protected $fillable = [
         'page_id',
-        'text'
+        'html_text'
     ];
 
     /**
@@ -29,7 +29,7 @@ class PageText extends Model
      */
     protected $casts = [
         'page_id' => 'integer',
-        'text' => 'array'
+        'html_text' => 'array'
     ];
 
     public function page(): HasOne
