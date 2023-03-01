@@ -1,0 +1,216 @@
+
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  29. SKILL CSS START
+/*----------------------------------------*/
+
+// Skill STYLE
+
+.skill__bg {
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.skill {
+    &__image {
+        @media #{$xs,$sm,$md,$lg,$xl}{
+            padding-left: 0;
+        }
+    }
+    &-thumb {
+        margin-left: 80px;
+        @media #{$xs,$sm,$md,$lg}{
+            margin-left: 0;
+        }
+    }
+    &-progress {
+        padding-right: 45px;
+        @media #{$xs,$sm,$md}{
+            padding-right: 0;
+        }
+    }
+    &-title {
+        h3 {
+            font-size: 26px;
+        }
+    }
+    &__video-btn {
+        width: 120px;
+        height: 120px;
+        background-color: var(--clr-common-white);
+        font-size: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @include border-radius(50%);
+        @include box-shadow(0px 16px 32px 0px rgba(0, 0, 0, 0.06));
+        position: absolute;
+        top: 50%;
+        right: -60px;
+        transform: translateY(-50%);
+        &:hover {
+            background-color: var(--clr-theme-1);
+            color: var(--clr-common-white);
+        }
+        @media #{$xxl, $xs,$sm,$md,$lg,$xl}{
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+
+// Skill  PROGRESS  STYLE
+.progress {
+    &-skill {
+        &-item {
+            position: relative;
+            margin-bottom: 26px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            h4 {
+                font-size: 16px;
+                text-transform: capitalize;
+                margin-bottom: 18px;
+            }
+            .progress-count {
+                position: absolute;
+                top: 0px;
+                right: 0;
+                font-weight: var(--bd-fw-bold);
+                font-family: var(--bd-ff-heading);
+                color: var(--clr-common-heading);
+            }
+            .progress {
+                height: 14px;
+                background-color: transparent;
+                border-radius: 0;
+                overflow: visible;
+                position: relative;
+                z-index: 1;
+                border-bottom: 2px solid #ececec;
+                padding-bottom: 4px;
+            }
+            .progress-bar {
+                background-image: -moz-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+                background-image: -webkit-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+                background-image: -ms-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+                overflow: visible;
+            }
+        }
+    }
+}
+
+// SKILL STYLE-2
+.skill {
+    &__progress {
+        &-wrapper {
+            margin-left: 50px;
+            margin-right: 100px;
+            @media #{$md,$xl}{
+                margin-right: 0;
+                margin-left: 30px;
+            }
+            @media #{$xs,$sm,$md,$lg}{
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    &__singel {
+        &-item {
+            position: relative;
+            border-radius: 10px;
+            background: var(--clr-common-white);
+            padding: 30px 37px 35px 37px;
+            @media #{$xs,$xl}{
+                padding: 30px 20px 35px 20px;
+            }
+            &:hover {
+                .skill__item-arrow {
+                    i {
+                        color: var(--clr-theme-1);
+                    }
+                }
+            }
+        }
+        &-content {
+            h2 {
+                font-size: 100px;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: relative;
+                background-image: linear-gradient(to right, var(--clr-theme-1) 0%, var(--clr-theme-3) 45%);
+                line-height: 1;
+                margin-bottom: 20px;
+                @media #{$xs,$xl}{
+                    font-size: 80px;
+                }
+            }
+            p {
+                margin-bottom: 0;
+            }
+            h4 {
+                margin-bottom: 10px;
+                @media #{$xl}{
+                    font-size: 18px;        }
+            }
+        }
+    }
+    &__item {
+        &-arrow {
+            position: absolute;
+            right: 24px;
+            top: 20px;
+            i {
+                position: relative;
+                transform: rotate(45deg);
+                font-size: 20px;
+                color: var(--clr-text-6);
+            }
+        }
+    }
+    &__info {
+        &-icon {
+            width: 140px;
+            display: flex;
+            align-items: center;
+            img {
+                margin-right: -50px;
+                align-items: center;
+            }
+        }
+        &-title {
+            h4 {
+                font-size: 18px;
+                line-height: 28px;
+                margin-top: 10px;
+            }
+        }
+        &-content {
+            display: flex;
+            gap: 50px;
+            @media #{$xs}{
+                gap: 0px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+.bd-skill__thumb {
+    padding-left: 80px;
+    @media #{$lg}{
+        padding-left: 30px;
+    }
+    @media #{$xs,$sm,$md}{
+        padding-left: 0;
+    }
+    img {
+        @include border-radius(6px);
+    }
+}

@@ -1,0 +1,234 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  17. FAQ CSS START
+/*----------------------------------------*/
+
+// FAQ BANNER
+.faq {
+	&__banner {
+		&-area {
+			min-height: 450px;
+			position: relative;
+			background: var(--clr-bg-grey-3);
+			z-index: 5;
+		}
+		&-thumb {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: -1;
+			@media #{$xs}{
+				display: none;
+			}
+		}
+		&-title {
+			h2 {
+				font-size: 60px;
+				margin-bottom: 50px;
+				color: var(--clr-common-black);
+				@media #{$xl}{
+					font-size: 55px;
+				}
+				@media #{$lg}{
+					font-size: 50px;
+				}
+				@media #{$sm,$md}{
+					font-size: 45px;
+				}
+				@media #{$xs}{
+					font-size: 36px;
+				}
+			}
+		}
+	}
+	&__info {
+		&-warapper {
+			max-width: 750px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+	}
+	&__search {
+		&-input {
+			position: relative;
+			input {
+				height: 60px;
+				width: 100%;
+				background: var(--clr-common-white);
+				border: 0;
+				padding-left: 20px;
+				padding-right: 150px;
+				position: relative;
+				font-size: 16px;
+				outline: none;
+				text-transform: capitalize;
+				@media #{$xs} {
+					padding-right: 20px;
+				}
+				@include border-radius(6px);
+				&::placeholder {
+					color: var(--clr-text-4);
+				}
+			}
+			button {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 0px 39px;
+				height: 60px;
+				@include border-radius(0px 4px 4px 0px);
+				text-transform: uppercase;
+				font-size: 16px;
+				font-weight: var(--bd-fw-sbold);
+				background-image: linear-gradient(to right, var(--clr-theme-3), var(--clr-theme-1), var(--clr-theme-1), var(--clr-theme-3));
+				border: none;
+				outline: none;
+				box-shadow: none;
+				color: var(--clr-common-white);
+				background-position: 100% 100%;
+				background-size: 300% 100%;
+				@include transition(.3s);
+				&:hover {
+				  background-position: 0% 100%;
+				  color: var(--clr-common-white);
+				}
+				@media #{$xs}{
+					position: static;
+					margin-top: 20px;
+					@include border-radius(4px 4px 4px 4px);
+				}
+			}
+		}
+	}
+}
+// FAQ TOPIC
+.faq {
+	&__topic {
+		&-items  {
+			background: transparent;
+			border: 1px solid #edeef2;
+			padding: 50px 25px 35px 25px;
+			@include border-radius(6px);
+			@include transition(0.3s);
+			@include box-shadow(0 30px 60px rgba(10,25,87,.07));
+			background-color: var(--clr-common-white);
+		}
+		&-icon {
+			transition: 0.3s;
+			img {
+				margin-bottom: 33px;
+			}
+		}
+		&-content {
+			h4 {
+				a {
+					font-size: 24px;
+					margin-bottom: 20px;
+					display: block;
+					@media #{$xl}{
+						font-size: 20px;
+					}
+					&:hover{
+						color: var(--clr-theme-1);
+					}
+				}
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+// Update CSS Start Here 
+.faq4{
+	&-area{
+		.section-title{
+			line-height: 1.18;
+		}
+	}
+}
+.accordion4{
+	&-wrapper{
+		background-color: var(--clr-common-white);
+		padding: 35px 60px 35px 60px;
+		border: 1px solid #8080801a;
+		position: relative;
+		@media #{$sm, $xs} {
+			padding: 34px 20px 35px 20px;
+		}
+		.accordion-body{
+			padding:  0;
+			p{
+				margin-bottom: 30px;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 28px;
+				color: #161A33;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			width: 608px;
+			height: 608px;
+			left: 50%;
+			top: 0;
+			background: linear-gradient(180deg, rgba(243, 250, 255, 0.5) 0%, rgba(239, 61, 30, 0.5) 100%);
+			filter: blur(217px);
+			z-index: -1;
+			border-radius: 50%;
+			transform: translateX(-50%);
+			opacity: .5;
+			@media #{$sm, $xs} {
+				display: none;
+			}
+		}
+		.accordion-item{
+			border: 0;
+			background: none;
+			button{
+				box-shadow: none;
+				color: #161A33;
+				padding: 25px 20px 25px 0;
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 30px;
+				background: none;
+				@media #{$xs} {
+					font-size: 20px;
+				}
+				&::after {
+					font-family: var(--bd-ff-fontawesome);
+					content: "\f068";
+					background-image: none;
+					top: 25px;
+					position: absolute;
+					right: 0;
+				}
+				&:not(.collapsed)::after {
+					@include transform(rotate(0deg));
+					font-weight: 400;
+				}
+				&.collapsed{
+					&::after {
+						font-family: var(--bd-ff-fontawesome);
+						content: "\f067";
+						background-image: none;
+						font-weight: 400;
+					}
+				}
+				&:not(.collapsed) {
+					color: var(--clr-theme-1);
+					background: none;
+				}
+			}
+			&:not(:first-child){
+				border-top: 1px solid #ddd;
+			}
+		}
+	}
+}

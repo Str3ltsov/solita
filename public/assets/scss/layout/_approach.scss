@@ -1,0 +1,72 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  32. APPROACH CSS START
+/*----------------------------------------*/
+.approach{
+    &-area{
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 41%;
+            left: -20%;
+            background: linear-gradient(180deg, #F3FAFF 0%, #6FBEFD 100%);
+            opacity: 0.25;
+            filter: blur(217px);
+            width: 488px;
+            height: 488px;
+            transform: translate(20%, -60%);
+            z-index: -1;
+            @media #{$lg, $md, $sm, $xs} {
+                display: none;
+            }
+        }
+    }
+    &-title {
+        h2 {
+            font-size: 55px;
+            line-height: 1.1;
+            font-weight: 500;
+            color: #161A33;
+        }
+    }
+    &-img {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #D2D2D2;
+        border-top: 1px solid #D2D2D2;
+    }
+}
+.ap-shape {
+    position: absolute;
+    top: -600px;
+    left: 0;
+    z-index: -1;
+}
+
+.dark{
+    .approach{
+        &-area{
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                left: 0;
+                margin: auto;
+                background: linear-gradient(180deg, #F3FAFF 0%, #6FBEFD 100%);
+                opacity: 0.75;
+                filter: blur(217px);
+            }
+        }
+        &-title {
+            h2 {
+                color: var(--clr-common-white);
+            }
+        }
+        &-img {
+            border-bottom: 1px solid #50567A;
+            border-top: 1px solid #50567A;
+        }
+    }
+}

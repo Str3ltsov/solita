@@ -1,0 +1,317 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  22. HISTORY CSS START
+/*----------------------------------------*/
+
+// HISTORY STYLE
+.history__thunb {
+	img {
+		border-radius: 10px;
+	}
+}
+.history__tab {
+	.nav-tabs {
+		border-bottom: 0;
+		border-bottom: 0;
+		justify-content: center;
+		gap: 155px;
+		display: inline-flex;
+		position: relative;
+		@media #{$md} {
+			gap: 100px;
+		}
+		@media #{$sm} {
+			gap: 70px;
+		}
+		@media #{$xs} {
+			gap: 45px 60px;
+		}
+		.nav-link {
+			margin-bottom: 0;
+			border: 0;
+			font-size: 16px;
+			font-weight: var(--bd-fw-bold);
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			width: calc(100% - 35px);
+			height: 2px;
+			background: #f3f3f3;
+			top: -15px;
+			left: 50%;
+			transform: translateX(-50%);
+			@media #{$xs} {
+				width: calc(90% - 35px);
+		  	}
+			@media #{$xs} {
+					gap:60px;
+			}
+		}
+	}
+	.nav-link {
+		position: relative;
+		color: #cdcecf;
+		padding: 0;
+		border: none;
+		font-weight: 500;
+		&::after {
+			position: absolute;
+			content: "";
+			width: 16px;
+			height: 16px;
+			border-radius: 50px;
+			left: 50%;
+			transform: translateX(-50%);
+			top: -23px;
+			background: linear-gradient(var(--clr-common-white), var(--clr-common-white)) padding-box, linear-gradient(90deg, #1f242c, #1f242c) border-box;
+			border: 2px solid transparent;
+			border-radius: 50px;
+		}
+		&.active {
+			&::after {
+				background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, var(--clr-theme-1),  var(--clr-theme-3)) border-box;
+				border: 2px solid transparent;
+				border-radius: 50px;
+			}
+		}
+	}
+}
+
+// HISTORY CONTENT
+.history {
+	&__content {
+		&-wrapper {
+			margin-right: 80px;
+			@media #{$xs,$sm,$md,$lg}{
+				margin-right: 0px;
+			}
+		}
+		h2 {
+			font-size: 40px;
+			margin-bottom: 15px;
+			@media #{$xs,$sm,$md,$lg,$xl}{
+				br {
+					display: none;
+				}
+			}
+			@media #{$xl}{
+				font-size: 36px;
+			}
+			@media #{$sm,$lg}{
+				font-size: 30px;
+			}
+			@media #{$xs}{
+				font-size: 26px;
+			}
+		}
+		p {
+			max-width: 550px;
+			margin-bottom: 35px;
+		}
+	}
+	&__thunb {
+		position: relative;
+		&-wrapper {
+			@media #{$xs,$sm,$md,$lg}{
+				margin-right: 0;
+			}
+		}
+	}
+}
+.play__btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% ,-50%);
+	a {
+		width: 100px;
+		height: 100px;
+		background-color: var(--clr-common-white);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		animation: pulse 2s infinite;
+		font-size: 20px;
+		border-radius: 50%;
+		color: var(--clr-common-heading);
+		&:hover {
+			background-color: var(--clr-theme-1);
+			color: var(--clr-common-white);
+		}
+	}
+}
+
+
+// Updated CSS Start Here 
+.bd-ud{
+	&-history{
+		&-wrapper {
+			@media #{$sm, $xs} {
+				margin-left: 10px;
+			}
+		}
+		&-padd{
+			padding-top: 115px;
+			padding-bottom: 120px;
+			@media #{$xl, $lg, $md, $sm, $xs} {
+				padding-bottom: 65px;
+			}
+		}
+		&-content {
+			background: var(--clr-common-white);
+			@include border-radius(10px);
+			padding: 50px 40px 30px 40px;
+			&.mr-75 {
+				@media #{$xxl} {
+					margin-right: 55px;
+				}
+				@media #{$xl, $lg, $md, $sm, $xs} {
+					margin-right: 0;
+				}
+			}
+			&.ml-40{
+				@media #{$md, $sm, $xs} {
+					margin-left: 0;
+				}
+			}
+			@media #{$xxs} {
+				padding: 30px 20px 10px 20px;
+			}
+		}
+		&-img{
+			max-width: 614px;
+			max-height: 614px;
+			img{
+				@include border-radius(10px);
+			}
+			&.ml-40{
+				@media #{$sm, $xs} {
+					margin-left: 0;
+				}
+			}
+		}
+		&-time {
+			position: absolute;
+			background: var(--clr-common-white);
+			display: inline-block;
+			height: 32px;
+			padding: 0 14px;
+			background: var(--clr-common-white);
+			box-shadow: 0px 4px 63px rgba(14, 132, 225, 0.12);
+			border-radius: 6px;
+			font-size: 18px;
+			font-weight: var(--bd-fw-sbold);
+			color: var(--clr-theme-1);
+			line-height: 34px;
+			top: 87px;
+			right: -38px;
+			@media #{$xl, $lg} {
+				right: -5px;
+			}
+			@media #{$sm, $xs} {
+				right: auto;
+				left: -25px;
+				top: 40px;
+			}
+			&.left{
+				right: auto;
+				left: -38px;
+				@media #{$xl, $lg} {
+					left: -5px;
+				}
+				@media #{$sm, $xs} {
+					left: -25px;
+				}
+			}
+		}
+		&-title {
+			font-size: 36px;
+			margin-bottom: 22px;
+			@media #{$lg, $md, $sm, $xs} {
+				font-size: 30px;
+			}
+			@media #{$xxs} {
+				font-size: 25px;
+			}
+		}
+		&-text {
+			color: var(--clr-text-19);
+		}
+		&-item{
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				top: 84px;
+				background: var(--clr-common-white);
+				left: 49%;
+				@include transform(translateX(-50%));
+				@include border-radius(50%);
+				@media #{$xl, $lg} {
+					left: 52%;
+				}
+				@media #{$md, $sm, $xs} {
+					@include transform(translateX(0));
+					left: -70px;
+				}
+				@media #{$xxs} {
+					width: 30px;
+					height: 30px;
+					left: -35px;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				top: 96px;
+				background: var(--clr-theme-1);
+				left: 49%;
+				@include transform(translateX(-50%));
+				@include border-radius(50%);
+				@media #{$xl, $lg} {
+					left: 52%;
+				}
+				@media #{$md, $sm, $xs} {
+					@include transform(translateX(0));
+					left: -58px;
+				}
+				@media #{$xxs} {
+					left: -28px;
+					top: 91px;
+				}
+				
+			}
+			&-wrapper{
+				position: relative;
+				@media #{$md, $sm, $xs} {
+					padding-left: 50px;
+				}
+				@media #{$xxs} {
+					padding-left: 20px;
+				}
+				&::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 49%;
+					border-left: 1px dashed var(--clr-border-15);
+					width: 1px;
+					@include transform(translateX(-50%));
+					height: 100%;
+					@media #{$xl, $lg} {
+						left: 52%;
+					}
+					@media #{$md, $sm, $xs} {
+						@include transform(translateX(0));
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+}

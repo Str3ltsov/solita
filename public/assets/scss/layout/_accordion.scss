@@ -1,0 +1,118 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  11. ACCORDIONG CSS START
+/*----------------------------------------*/
+
+// ACCORDIONG STYLE
+
+.custom-gx-5 {
+	--bs-gutter-x: 50px;
+	@media #{$xs} {
+		--bs-gutter-x: 0px;
+	}
+}
+.bd-faq {
+	&__accordion {
+		.accordion-button {
+            font-size: 18px;
+            font-weight: var(--bd-fw-bold);
+			padding-right: 55px;
+            height: 60px;
+            padding-left: 30px;
+            background: var(--clr-common-white);
+			@include border-radius(30px);
+			@media #{$xs,$lg}{
+				padding-left: 20px;
+				font-size: 16px;
+			}
+			&:focus {
+				z-index: 3;
+				border: none;
+				outline: 0;
+				box-shadow: none;
+			}
+			&:not(.collapsed) {
+				content: "";
+				box-shadow: none;
+				border: 0;
+                background: linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+                color: var(--clr-common-white);
+			}
+			&:not(.collapsed)::after {
+				background: none;
+				transform: rotate(180deg);
+				content: "";
+				position: absolute;
+				right: 10px;
+                top: 50%;
+                height: 40px;
+                width: 40px;
+                background-color: var(--clr-common-white);
+                color: var(--clr-common-heading);
+                @include flexbox();
+                align-items: center;
+                justify-content: center;
+                @include transform(translateY(-50%));
+				font-family: var(--bd-ff-fontawesome);
+				@media #{$xs}{
+					right: 15px;
+				}
+			}
+			&::after {
+				background: none;
+				color: var(--clr-common-white);
+                content: "\2b";
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                height: 40px;
+                width: 40px;
+                background-color: var(--clr-common-heading);
+                @include flexbox();
+                align-items: center;
+                justify-content: center;
+                @include transform(translateY(-50%));
+                font-family: var(--bd-ff-fontawesome);
+                font-weight: 400;
+				@include transition (.3s);
+                @include border-radius(50%);
+				@media #{$xs}{
+					right: 15px;
+				}
+			}
+		}
+		.accordion-item {
+			margin-bottom: 20px;
+            border: 0;
+			&:first-of-type {
+				.accordion-button {
+					@include border-radius(30px);
+					@include box-shadow(0px 16px 32px 0px rgba(0, 0, 0, 0.04));
+				}
+			}
+			&:last-of-type {
+				.accordion-button {
+					&.collapsed {
+						border-bottom-right-radius: 30px;
+						border-bottom-left-radius: 30px;
+					}
+				}
+			}
+		}
+		.accordion-collapse {
+			border: 0;
+		}
+		.accordion-body {
+            padding: 20px 30px 5px 30px;
+			@media #{$xs}{
+				padding: 20px 15px 5px 15px;
+			}
+			p {
+				margin-bottom: 0;
+				margin-top: 3px;
+			}
+		}
+	}
+}
+

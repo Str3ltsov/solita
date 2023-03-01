@@ -1,0 +1,118 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  12. BRAND CSS START
+/*----------------------------------------*/
+
+// BRAND STYLE
+.pt-405 {
+    padding-top: 405px ;
+}
+.brand {
+    &__area {
+        position: relative;
+        margin-top: -290px;
+        z-index: 5;
+    }
+    &__overlay {
+        position: relative;
+        &:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0;
+            background-color: rgb(31, 36, 44);
+            opacity: 0.961;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+	&__title {
+		span {
+			color: var(--clr-common-white);
+			font-weight: var(--bd-fw-sbold);
+			margin-bottom: 45px;
+			display: block;
+			@media #{$xs,$sm,$md,$lg}{
+				margin-top: 20px;
+			}
+		}
+	}
+}
+.singel {
+	&__brand {
+		a {
+			img {
+				opacity: 20%;
+			}
+		}
+		&:hover {
+			a {
+				img {
+					opacity: 100%;
+				}
+			}
+		}
+	}
+}
+
+// BRAND STYLE-2
+.partner {
+	&__area {
+		border-top: 1px solid var(--clr-border-10);
+	}
+}
+.brand {
+	&__title {
+		font-size: 16px;
+		line-height: 26px;
+		@media #{$xs,$sm}{
+			margin-bottom: 30px;
+			text-align: center;
+		}
+	}	
+	&__item {
+		a {
+			img {
+				opacity: 0.4;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+// Brand Updated CSS 
+.bd-ud-brand-space{
+	margin-top: 0;
+}
+.brand4{
+	&-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&-slide {
+		text-align: center;
+		img {
+			max-width: 100%;
+			opacity: .5;
+		}
+		&:hover img{
+			opacity: 1;
+		}
+	}
+}
+
+.brand5-slide{
+	text-align: center;
+	img{
+		@media #{$xl, $lg, $md, $sm, $xs} {
+			max-width: 140px;
+		}
+	}
+}
+

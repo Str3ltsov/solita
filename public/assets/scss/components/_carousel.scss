@@ -1,0 +1,174 @@
+
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* 06. CAROUSEL CSS START
+/*----------------------------------------*/
+
+// Case study navigation
+.case__study-nav {
+	@include flexbox();
+	gap: 15px;
+	position: absolute;
+	top: -125px;
+	right: 0;
+	z-index: 55;
+	border: 2px solid var(--clr-border-2);
+	padding: 10px;
+	@include border-radius(6px);
+	@media #{$xs}{
+		display: none;
+	}
+	button {
+		width: 40px;
+		height: 40px;
+		font-size: 18px;
+		@include border-radius(4px);
+		background-color: var(--clr-border-2);
+		color: var(--clr-common-heading);
+		&:hover {
+			background: var(--clr-theme-1);
+			color: var(--clr-common-white);
+		}
+	}
+}
+
+// Case study style
+.case-study__active-2 {
+	&.swiper-container {
+		padding-bottom: 120px;
+	}
+	.swiper-scrollbar-drag {
+		width: 400px !important;
+		background-image: -moz-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+		background-image: -webkit-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+		background-image: -ms-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+		box-shadow: 0px 8px 16px 0px rgba(104, 75, 177, 0.3) !important;
+	}
+	.swiper-scrollbar {
+		height: 10px !important;
+		background: var(--clr-border-5);
+		opacity: 1 !important;
+		width: 100% !important;
+		left: 0 !important;
+		bottom: 0 !important;
+		position: inherit !important;
+		margin-top: 50px;
+	}
+}
+
+// Portfolio navigation
+.portfolio__navigation {
+	display: flex;
+	gap: 10px;
+	position: relative;
+	z-index: 66;
+	@media #{$xs,$sm}{
+		display: none;
+	}
+	button {
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 18px;
+		position: relative;
+		background-color: var(--clr-bg-grey-4);
+		color: var(--clr-common-heading);
+		z-index: -1;
+		&::after {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 100%;
+			background-image: linear-gradient(to right, #141f2b, #141f2b, var(--clr-theme-1), var(--clr-theme-3));
+			background-position: 100% 100%;
+			background-size: 300% 100%;
+			left: 0;
+			top: 0;
+			border-radius: 50%;
+			z-index: -1;
+			opacity: 0;
+		}
+		&:hover {
+			color: var(--clr-common-white);
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	&.style-2 {
+		button {
+			background-color: var(--clr-common-white);
+		}
+	}
+}
+
+// Testimonial navigation
+.testimonial__navigation {
+	@include flexbox();
+	justify-content: end;
+	gap: 10px;
+	position: relative;
+	z-index: 55;
+	margin-top: 25px;
+	@media #{$xs,$sm}{
+		display: none;
+	}
+	button{
+		width: 60px;
+		height: 60px;
+		@include border-radius(50%);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 18px;
+		position: relative;
+		color: var(--clr-common-white);
+		background-color: transparent;
+		z-index: -1;
+		border: 2px solid rgb(255, 255, 255, .1);
+		&::after {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 100%;
+			background-image: -webkit-linear-gradient( 0deg, var(--clr-theme-1) 0%, var(--clr-theme-3) 100%);
+			@include transition(.3s);
+			left: 0;
+			top: 0;
+			@include border-radius(50%);
+			z-index: -1;
+			opacity: 0;
+		}
+		&:hover {
+			background-color: transparent;
+			color: var(--clr-common-white);
+			border: 2px solid transparent;
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	&.style-2 {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #f5f5f5;
+		padding: 10px 10px;
+		border-radius: 50px;
+		bottom: -30px;
+		button {
+			width: 50px;
+			height: 50px;
+			background-color: var(--clr-common-white);
+			color: var(--clr-common-heading);
+			&:hover {
+				border-color: transparent;
+				color: var(--clr-common-white);
+			}
+		}
+	}
+}
