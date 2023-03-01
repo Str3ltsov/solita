@@ -35,7 +35,7 @@
 {{--                                @csrf--}}
 {{--                                <a class="nav-link" href="{{ route('logout') }}"--}}
 {{--                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">--}}
-{{--                                    {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}--}}
+{{--                                    {{ __('Atsijungti') }}--}}
 {{--                                </a>--}}
 {{--                            </form>--}}
 {{--                        </li>--}}
@@ -106,13 +106,7 @@
                                     </li>
                                     @auth
                                         <li class="menu-last d-lg-none">
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0">
-                                                @csrf
-                                                <a href="{{ route('logout') }}"
-                                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                    {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}
-                                                </a>
-                                            </form>
+                                            <a href="{{ route('puslapiai.index') }}">{{ __('Admino Skydas') }}</a>
                                         </li>
                                     @endauth
                                 </ul>
@@ -125,9 +119,6 @@
                     <div class="col-xl-5 col-lg-3 col-8">
                         <div class="bd-ud-header-bottom-cta">
                             <div class="bd-ud-header-bottom-cta-wrapper d-flex align-items-center justify-content-end">
-                                @auth
-                                    <span class="text-white d-none d-lg-inline">{{ __('Prisijungęs kaip adminas') }}:</span>
-                                @endauth
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
                                     @guest
                                         <a class="bd-ud-btn" href="{{ route('kontaktai') }}">
@@ -135,14 +126,10 @@
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>
                                     @else
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="m-0 p-0 menu-last">
-                                            @csrf
-                                            <a class="bd-ud-btn" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                {{ $pages[\App\Enums\PageEnum::ATSIJUNGTI] }}
-                                                <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
-                                            </a>
-                                        </form>
+                                        <a class="bd-ud-btn" href="{{ route('puslapiai.index') }}">
+                                            {{ __('Admino Skydas') }}
+                                            <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
+                                        </a>
                                     @endguest
                                 </div>
                                 <div class="bd-ud-header-bottom-cta-item d-xl-none">

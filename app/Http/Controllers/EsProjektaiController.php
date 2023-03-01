@@ -32,33 +32,4 @@ class EsProjektaiController extends Controller
                 'pageText' => $this->decodePageText($this->pageText)
             ]);
     }
-
-    /*
-     * Es projektai edit page
-     */
-    public function edit(): Factory|View|Application
-    {
-        return view('es_projektai.edit')
-            ->with([
-                'pageText' => $this->decodePageText($this->pageText)
-            ]);
-    }
-
-    /*
- * Updates and saves es projektai page texts
- */
-    public function update(Request $request): RedirectResponse
-    {
-        try {
-            $this->pageText->html_text = $request->html_text;
-            $this->pageText->save();
-
-            return redirect()
-                ->route('esProjektai')
-                ->with('success', __('Sėkmingai išsaugota ir atnaujinta'));
-
-        } catch (\Exception $exception) {
-            return back()->with('error', $exception->getMessage());
-        }
-    }
 }

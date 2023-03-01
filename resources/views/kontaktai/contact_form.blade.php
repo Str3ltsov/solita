@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('submitContactForm') }}" {{--style="width: clamp(300px, 100%, 600px)"--}}>
+<form method="POST" action="{{ route('submitContactForm') }}">
     @csrf
     <div class="row">
         <div class="col-lg-6">

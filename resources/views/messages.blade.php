@@ -25,6 +25,6 @@
 
 @push('scripts')
     <script>
-        setTimeout(() => $('.alert').remove(), 3 * 1000);
+        setTimeout(() => $('.alert').remove(), 5 * 1000);
     </script>
 @endpush

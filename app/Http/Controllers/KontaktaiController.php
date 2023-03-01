@@ -6,6 +6,7 @@ use App\Enums\PageEnum;
 use App\Events\ContactFormSent;
 use App\Http\Requests\CreateContactFormRequest;
 use App\Models\ContactForm;
+use App\Traits\ContactFormServices;
 use App\Traits\PageTextServices;
 
 use Illuminate\Contracts\Foundation\Application;
@@ -16,7 +17,7 @@ use Illuminate\Http\Request;
 
 class KontaktaiController extends Controller
 {
-    use PageTextServices;
+    use PageTextServices, ContactFormServices;
 
     private object $pageText;
 
@@ -37,20 +38,6 @@ class KontaktaiController extends Controller
     }
 
     /*
-     * Creates contact form
-     */
-    private function createContactForm(array $validated): void
-    {
-        ContactForm::firstOrCreate([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'topic' => $validated['topic'],
-            'description' => $validated['description'] ?? NULL,
-            'created_at' => now()
-        ]);
-    }
-
-    /*
      * Submits contact form
      */
     public function submitContactForm(CreateContactFormRequest $request): RedirectResponse
@@ -61,41 +48,15 @@ class KontaktaiController extends Controller
             $this->createContactForm($validated);
 
             event(new ContactFormSent(
-                $validated['name'], $validated['email'], $validated['topic'], $validated['description'] ?? NULL
+                $validated['name'],
+                $validated['email'],
+                $validated['topic'],
+                    $validated['description'] ?? __('Nėra aprašymo')
             ));
 
             return back()->with('success', __('Forma sėkmingai pateikta'));
         }
         catch (\Exception $exception) {
-            return back()->with('error', $exception->getMessage());
-        }
-    }
-
-    /*
-     * Kontaktai edit page
-     */
-    public function edit(): Factory|View|Application
-    {
-        return view('kontaktai.edit')
-            ->with([
-                'pageText' => $this->decodePageText($this->pageText)
-            ]);
-    }
-
-    /*
- * Updates and saves kontaktai page texts
- */
-    public function update(Request $request): RedirectResponse
-    {
-        try {
-            $this->pageText->html_text = $request->html_text;
-            $this->pageText->save();
-
-            return redirect()
-                ->route('kontaktai')
-                ->with('success', __('Sėkmingai išsaugota ir atnaujinta'));
-
-        } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
     }

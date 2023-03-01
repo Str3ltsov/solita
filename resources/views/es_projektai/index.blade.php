@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     {{--    <div class="container mt-5">--}}
@@ -30,17 +30,6 @@
                         </div>
                     </div>
                     <div class="col-xl-7 col-lg-8">
-                        @auth
-                            <div class="banner5-btn wow fadeInUp mb-50 ms-md-3" data-wow-delay=".9s"
-                                 style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                                <div class="about__btn">
-                                    <a class="it__btn-3 px-4" href="{{ route('editEsProjektai') }}">
-                                        {{ __('Redaguoti ES Projektai') }}
-                                        <span><i class="fa-solid fa-pen-to-square ms-2"></i></span>
-                                    </a>
-                                </div>
-                            </div>
-                        @endauth
                         <div class="about__right-content mb-60">
                             <div class="about__description-text">
                                 {!! $pageText->html_text !!}

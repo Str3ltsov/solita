@@ -3,6 +3,6 @@
 
 {{ $name.' ('.$email.')' }} atsiuntė naują pranešimą.
 
-{{ $description ?? 'Nėra aprašymo' }}
+{{ $description }}
 
 </x-mail::message>

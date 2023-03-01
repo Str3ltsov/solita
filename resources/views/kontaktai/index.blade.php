@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
     {{--    <div class="container mt-5">--}}
@@ -27,24 +27,13 @@
             <div class="row wow fadeInUp mt-50" data-wow-delay=".3s"
                  style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                 <div class="col-lg-6">
-                    @auth
-                        <div class="banner5-btn wow fadeInUp mb-50" data-wow-delay=".9s"
-                             style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                            <div class="about__btn">
-                                <a class="it__btn-3 px-4" href="{{ route('editKontaktai') }}">
-                                    {{ __('Redaguoti Kontaktai') }}
-                                    <span><i class="fa-solid fa-pen-to-square ms-2"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    @endauth
                     <div class="contact__info-wrapper mb-30">
                         {!! $pageText->html_text !!}
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="contact__form bd-ud-contact-form mb-60">
-                        @include('kontaktai.forms.contact_form')
+                        @include('kontaktai.contact_form')
                     </div>
                 </div>
             </div>

@@ -38,6 +38,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('*', fn($view) => $view->with('pages', $this->getPageNames()));
+        if (!str_contains(url()->current(), 'admin')) {
+            View::composer('*', fn($view) => $view->with('pages', $this->getPageNames()));
+        }
     }
 }

@@ -37,12 +37,12 @@
 						meanRevealPositionDistance: "0", // Tweak the position of the menu
 						meanRevealColour: "", // override CSS colours for the reveal background
 						meanScreenWidth: "480", // set the screen width you want meanmenu to kick in at
-						meanNavPush: "", // set a height here in px, em or % if you want to budge your layouts now the navigation is missing.
+						meanNavPush: "", // set a height here in px, em or % if you want to budge your layout now the navigation is missing.
 						meanShowChildren: true, // true to show children in the menu, false to hide them
 						meanExpandableChildren: true, // true to allow expand/collapse children
 						meanRemoveAttrs: false, // true to remove classes and IDs, false to keep them
 						onePage: false, // set to true for one page sites
-						meanDisplay: "block", // override display method for table cell based layouts e.g. table-cell
+						meanDisplay: "block", // override display method for table cell based layout e.g. table-cell
 						removeElements: "" // set to hide page elements
 				};
 				options = $.extend(defaults, options);
@@ -160,7 +160,7 @@
 										});
 									}
 
-									// push in a holder div (this can be used if removal of nav is causing layouts issues)
+									// push in a holder div (this can be used if removal of nav is causing layout issues)
 									jQuery(meanMenu).before('<div class="mean-push" />');
 									jQuery('.mean-push').css("margin-top",meanNavPush);
 
