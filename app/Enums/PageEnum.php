@@ -8,5 +8,4 @@ enum PageEnum : int
     const ES_PROJEKTAI = 2;
     const PASLAUGOS = 3;
     const KONTAKTAI = 4;
-    const ATSIJUNGTI = 5;
 }

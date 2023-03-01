@@ -11,22 +11,22 @@
 {{--                <ul class="navbar-nav mb-2 mb-lg-0">--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'apie_mus')) active @endif" href="{{ route('apieMus') }}">--}}
-{{--                            {{ $puslapiai[\App\Enums\PageEnum::APIE_MUS] }}--}}
+{{--                            {{ $pages[\App\Enums\PageEnum::APIE_MUS] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'es_projektai')) active @endif" href="{{ route('esProjektai') }}">--}}
-{{--                            {{ $puslapiai[\App\Enums\PageEnum::ES_PROJEKTAI] }}--}}
+{{--                            {{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'paslaugos')) active @endif" href="{{ route('paslaugos') }}">--}}
-{{--                            {{ $puslapiai[\App\Enums\PageEnum::PASLAUGOS] }}--}}
+{{--                            {{ $pages[\App\Enums\PageEnum::PASLAUGOS] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    <li class="nav-item mx-md-3">--}}
 {{--                        <a class="nav-link @if (Str::contains(url()->current(), 'kontaktai')) active @endif" href="{{ route('kontaktai') }}">--}}
-{{--                            {{ $puslapiai[\App\Enums\PageEnum::KONTAKTAI] }}--}}
+{{--                            {{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
 {{--                    @if (auth()->check())--}}
@@ -35,7 +35,7 @@
 {{--                                @csrf--}}
 {{--                                <a class="nav-link" href="{{ route('logout') }}"--}}
 {{--                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">--}}
-{{--                                    {{ $puslapiai[\App\Enums\PageEnum::ATSIJUNGTI] }}--}}
+{{--                                    {{ __('Atsijungti') }}--}}
 {{--                                </a>--}}
 {{--                            </form>--}}
 {{--                        </li>--}}

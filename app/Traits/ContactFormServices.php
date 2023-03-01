@@ -27,4 +27,18 @@ trait ContactFormServices
 
         return $contactForm;
     }
+
+    /*
+     * Creates contact form
+     */
+    public static function createContactForm(array $validated): void
+    {
+        ContactForm::firstOrCreate([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'topic' => $validated['topic'],
+            'description' => $validated['description'] ?? NULL,
+            'created_at' => now()
+        ]);
+    }
 }

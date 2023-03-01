@@ -35,14 +35,6 @@ Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->na
  * Admin routes
  */
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/apie_mus/edit', [ApieMusController::class, 'edit'])->name('editApieMus');
-    Route::patch('/apie_mus/edit', [ApieMusController::class, 'update'])->name('updateApieMus');
-    Route::get('/es_projektai/edit', [EsProjektaiController::class, 'edit'])->name('editEsProjektai');
-    Route::patch('/es_projektai/edit', [EsProjektaiController::class, 'update'])->name('updateEsProjektai');
-    Route::get('/paslaugos/edit', [PaslaugosController::class, 'edit'])->name('editPaslaugos');
-    Route::patch('/paslaugos/edit', [PaslaugosController::class, 'update'])->name('updatePaslaugos');
-    Route::get('/kontaktai/edit', [KontaktaiController::class, 'edit'])->name('editKontaktai');
-    Route::patch('/kontaktai/edit', [KontaktaiController::class, 'update'])->name('updateKontaktai');
     Route::resource('puslapiai', PuslapiaiController::class)->only(['index', 'edit', 'update']);
     Route::resource('pranesimai', PranesimaiController::class)->only(['index']);
 });
