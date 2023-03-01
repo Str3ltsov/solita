@@ -36,7 +36,7 @@ Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->na
  */
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('puslapiai', PuslapiaiController::class)->only(['index', 'edit', 'update']);
-    Route::resource('pranesimai', PranesimaiController::class)->only(['index']);
+    Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
 });
 
 

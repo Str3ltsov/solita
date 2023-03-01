@@ -23,4 +23,20 @@ class PranesimaiController extends Controller
         return view('pranesimai.index')
             ->with('messages', $this->getContactForms());
     }
+
+    /*
+     * Deletes specific message by id
+     */
+    public function destroy(int $id): RedirectResponse
+    {
+        try {
+            $message = $this->getContactFormById($id);
+            $message->delete();
+
+            return back()->with('success', __('Pranešimas sėkmingai ištrintas'));
+        }
+        catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
+    }
 }

@@ -7,6 +7,7 @@
         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Tema">{{ __('Tema') }}</th>
         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Aprašymas">{{ __('Aprašymas') }}</th>
         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Sukūrimo data">{{ __('Sukūrimo data') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Veiksmai">{{ __('Veiksmai') }}</th>
     </tr>
     </thead>
     <tbody>
@@ -18,6 +19,9 @@
                 <td>{{ $message->topic }}</td>
                 <td>{{ $message->description }}</td>
                 <td>{{ $message->created_at ? $message->created_at->format('Y-m-d H:i') : '-' }}</td>
+                <td>
+                    @include('pranesimai.forms.destroy_form')
+                </td>
             </tr>
         @endforeach
     </tbody>
@@ -29,6 +33,7 @@
         <th rowspan="1" colspan="1">{{ __('Tema') }}</th>
         <th rowspan="1" colspan="1">{{ __('Aprašymas') }}</th>
         <th rowspan="1" colspan="1">{{ __('Sukūrimo data') }}</th>
+        <th rowspan="1" colspan="1">{{ __('Veiksmai') }}</th>
     </tr>
     </tfoot>
 </table>
