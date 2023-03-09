@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('page_texts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('page_id')->nullable()->constrained('puslapiai');
+            $table->foreignId('page_id')->nullable()->constrained('pages');
             $table->longText('html_text');
             $table->timestamps();
         });

@@ -13,12 +13,11 @@ class PageSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('puslapiai')->insert([
+        DB::table('pages')->insert([
             ['name' => 'Apie Mus'],
             ['name' => 'ES Projektai'],
             ['name' => 'Paslaugos'],
-            ['name' => 'Kontaktai'],
-            ['name' => 'Atsijungti']
+            ['name' => 'Kontaktai']
         ]);
     }
 }
