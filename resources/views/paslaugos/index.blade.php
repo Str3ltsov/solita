@@ -25,12 +25,12 @@
                     <div class="col-xl-5 col-lg-4">
                         <div class="about__left-one p-relative mb-60">
                             <div class="about__left-thumb">
-                                <img src="{{ asset('assets/img/about/about-01.jpg') }}" alt="about-img">
+                                <img src="{{ asset('images/paslaugos.jpg') }}" alt="Paslaugos">
                             </div>
                             <div class="about__experience-shape">
                                 <div class="about__experience-content">
-                                    <h2>30</h2>
-                                    <span>Year Experience</span>
+                                    <h2>5</h2>
+                                    <span>metų patiritis</span>
                                     <div class="about__experience-shape-icon">
                                         <i class="fal fa-trophy-alt"></i>
                                     </div>
@@ -40,6 +40,10 @@
                     </div>
                     <div class="col-xl-7 col-lg-8">
                         <div class="about__right-content mb-60">
+                            <div class="section__title-one mb-35">
+                                <span>// Paslaugos</span>
+                                <h2>Įmonės veiklos sritys</h2>
+                            </div>
                             <div class="about__description-text">
                                 <div class="bd-ud-app-check-list mb-25">
                                     {!! $pageText->html_text !!}

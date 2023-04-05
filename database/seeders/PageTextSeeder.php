@@ -16,12 +16,6 @@ class PageTextSeeder extends Seeder
     {
         DB::table('page_texts')->insert([
             [
-                'page_id' => PageEnum::APIE_MUS,
-                'html_text' => htmlentities("
-                    <p>UAB \"Solita\" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas.'</p>
-                ", ENT_QUOTES)
-            ],
-            [
                 'page_id' => PageEnum::ES_PROJEKTAI,
                 'html_text' => htmlentities("
                     <img src=\"images/es_projektai.png\" alt=\"es_projektai\" style=\"width: clamp(250px, 100%, 450px)\">

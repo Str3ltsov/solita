@@ -3,8 +3,7 @@
     <tr>
         <th class="sorting sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="ID">{{ __('ID') }}</th>
         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Pavadinimas">{{ __('Pavadinimas') }}</th>
-{{--        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Tekstas">{{ __('Tekstas') }}</th>--}}
-        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Atnaujinta data" style="">{{ __('Atnaujinta data') }}</th>
+        <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Atnaujinimo data" style="">{{ __('Atnaujinimo data') }}</th>
         <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Veiksmai" style="">{{ __('Veiksmai') }}</th>
     </tr>
     </thead>
@@ -13,23 +12,18 @@
             <tr>
                 <td class="dtr-control sorting_1" tabindex="0">{{ $page->id }}</td>
                 <td>{{ $page->page->name }}</td>
-{{--                                <td>{!! $page->html_text ?? '-' !!}</td>--}}
                 <td style="">{{ $page->updated_at ? $page->updated_at->format('Y-m-d H:i') : '-' }}</td>
                 <td style="">
                     <div class="d-flex">
                         @if ($loop->index === 0)
-                            <a href="{{ route('apieMus')}}">
-                                <i class="fa-solid fa-eye text-dark"></i>
-                            </a>
-                        @elseif ($loop->index === 1)
                             <a href="{{ route('esProjektai')}}">
                                 <i class="fa-solid fa-eye text-dark"></i>
                             </a>
-                        @elseif ($loop->index === 2)
+                        @elseif ($loop->index === 1)
                             <a href="{{ route('paslaugos')}}">
                                 <i class="fa-solid fa-eye text-dark"></i>
                             </a>
-                        @elseif ($loop->index === 3)
+                        @elseif ($loop->index === 2)
                             <a href="{{ route('kontaktai')}}">
                                 <i class="fa-solid fa-eye text-dark"></i>
                             </a>
@@ -46,8 +40,7 @@
     <tr>
         <th rowspan="1" colspan="1">{{ __('ID') }}</th>
         <th rowspan="1" colspan="1">{{ __('Pavadinimas') }}</th>
-{{--        <th rowspan="1" colspan="1">{{ __('Tekstas') }}</th>--}}
-        <th rowspan="1" colspan="1" style="">{{ __('Atnaujinta data') }}</th>
+        <th rowspan="1" colspan="1" style="">{{ __('Atnaujinimo data') }}</th>
         <th rowspan="1" colspan="1" style="">{{ __('Veiksmai') }}</th>
     </tr>
     </tfoot>

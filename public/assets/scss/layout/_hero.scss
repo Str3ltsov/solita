@@ -293,7 +293,7 @@
 		color: var(--clr-common-heading);
 	}
 }
-// Banner Style 
+// Banner Style
 .banner {
 	&__height {
 		min-height: 505px;
@@ -976,7 +976,7 @@
 			opacity: 0.75;
 		}
 	}
-	&-subtitle, &-title{ 
+	&-subtitle, &-title{
 		font-weight: var(--bd-fw-medium);
 		color: #161A33;
 		text-transform: uppercase;
@@ -1057,7 +1057,7 @@
 	}
 }
 
-// banner 5 css 
+// banner 5 css
 .pos-rel {
     position: relative;
 }
@@ -1117,7 +1117,7 @@
     }
 }
 .slider5-height{
-	min-height: 1080px;
+	min-height: 800px;
 	@media #{$xl, $lg} {
 		min-height: 900px;
 	}
@@ -1181,7 +1181,7 @@
 }
 /* banner css end */
 
-// Partical css 
+// Partical css
 .et-tsparticles {
 	display: block;
 	width: 100%;

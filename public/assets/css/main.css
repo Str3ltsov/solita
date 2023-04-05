@@ -1979,10 +1979,14 @@ body.dark {
 .offcanvas__contact-text a {
   font-size: 16px;
   font-weight: 500;
-  color: var(--clr-common-white);
+  /*color: var(--clr-common-white);*/
 }
 .offcanvas__contact-text a:hover {
   color: var(--clr-theme-1);
+}
+.offcanvas__contact-text p {
+    padding: 0;
+    margin: 0;
 }
 .offcanvas__wallet-btn {
   display: inline-block;
@@ -2166,7 +2170,6 @@ body.dark {
   margin-bottom: 15px;
   display: block;
   font-weight: var(--bd-fw-sbold);
-  text-transform: capitalize;
   line-height: 1;
 }
 
@@ -5638,7 +5641,7 @@ body.dark {
 }
 
 .slider5-height {
-  min-height: 1080px;
+  min-height: 900px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .slider5-height {
@@ -14024,8 +14027,8 @@ body.dark {
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid var(--clr-border-10);
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 @media (max-width: 575px) {
   .contact__info-item {
@@ -14037,11 +14040,11 @@ body.dark {
   border-bottom: 0;
 }
 .contact__info-icon {
-  height: 60px;
-  width: 60px;
-  min-width: 60px;
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
   display: inline-block;
-  line-height: 60px;
+  line-height: 50px;
   text-align: center;
   border-radius: 50%;
   overflow: hidden;
@@ -14073,10 +14076,9 @@ body.dark {
   font-weight: 500;
   margin-bottom: 5px;
   display: inline-block;
-  text-transform: capitalize;
 }
 .contact__info-content h5 a {
-  font-size: 20px;
+
 }
 .contact__info-content h5 a:hover {
   color: var(--clr-theme-1);

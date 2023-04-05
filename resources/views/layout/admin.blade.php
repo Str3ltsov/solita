@@ -100,7 +100,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4" tabIndex="0">
         <div class="brand-link logo">
             <a href="{{ url('/') }}" class="brand-text pl-2" style="font-size: 1.8rem">
-                Solita
+                <img src="{{ asset('images/Solita_logo.png') }}" alt="Solita" height="50">
             </a>
         </div>
         <div class="sidebar">
@@ -163,7 +163,7 @@
     </div>
 
     <footer class="main-footer">
-        <strong>{{ __('Visos teisės saugomos © 2019-2023 UAB "Solita"') }}</strong>
+        <strong>{{ __('Visos teisės saugomos © 2018-2023 UAB "Solita"') }}</strong>
     </footer>
 
     <aside class="control-sidebar control-sidebar-dark" style="display: none; top: 57px; height: 798px;">

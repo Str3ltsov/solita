@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="card-footer">
-        <button type="submit" class="btn btn-primary">{{ __('Atnaujinti ir Išsaugoti') }}</button>
-        <a href="{{ url()->previous() }}" class="btn btn-secondary">{{ __('Grįžti Atgal') }}</a>
+        <button type="submit" class="btn btn-primary">{{ __('Atnaujinti ir išsaugoti') }}</button>
+        <a href="{{ url()->previous() }}" class="btn btn-secondary">{{ __('Grįžti atgal') }}</a>
     </div>
 </form>

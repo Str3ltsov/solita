@@ -14,8 +14,7 @@ class PageSeeder extends Seeder
     public function run(): void
     {
         DB::table('pages')->insert([
-            ['name' => 'Apie Mus'],
-            ['name' => 'ES Projektai'],
+            ['name' => 'ES projektai'],
             ['name' => 'Paslaugos'],
             ['name' => 'Kontaktai']
         ]);
