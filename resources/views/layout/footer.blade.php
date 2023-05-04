@@ -10,7 +10,7 @@
                             </div>
                             <div class="footer__content">
                                 <p>
-                                    {{ __('UAB "Solita" yra start-up tipo įmonė ir veiklą vysto nuo 2018 metų pradžios. Pagrindinė įmonės veikla – IT sprendimų vystymas ir pardavimas.') }}
+                                    {{ __('Individualios programinės įrangos kūrimas ir IT ekspertai jūsų verslui.') }}
                                 </p>
                             </div>
                         </div>
@@ -24,6 +24,9 @@
                                 <ul>
                                     <li>
                                         <a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('apieMus') }}">{{ $pages[\App\Enums\PageEnum::APIE_MUS] }}</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('esProjektai') }}">{{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}</a>
@@ -100,7 +103,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-6 col-sm-6">
                                 <div class="footer__logo logo logo-footer">
-                                    <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo.png') }}" alt="Solita" height="40"></a>
+                                    <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="40"></a>
                                 </div>
                             </div>
 {{--                            <div class="col-md-6 col-sm-6">--}}

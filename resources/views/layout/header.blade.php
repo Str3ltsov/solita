@@ -43,6 +43,9 @@
                                         <a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
                                     </li>
                                     <li class="menu-last">
+                                        <a href="{{ route('apieMus') }}">{{ $pages[\App\Enums\PageEnum::APIE_MUS] }}</a>
+                                    </li>
+                                    <li class="menu-last">
                                         <a href="{{ route('esProjektai') }}">{{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}</a>
                                     </li>
                                     <li class="menu-last">
@@ -60,7 +63,7 @@
                             </nav>
                         </div>
                         <div class="bd-ud-mobile-logo d-lg-none logo">
-                            <a href="{{ url('/') }}">Solita</a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="50"></a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-3 col-8">

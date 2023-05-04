@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class PagrindinisController extends Controller
+class ApieMusController extends Controller
 {
     use PageTextServices;
 
@@ -23,11 +23,11 @@ class PagrindinisController extends Controller
     }
 
     /*
-     * Es projektai page
+     * Paslaugos page
      */
     public function index(): Factory|View|Application
     {
-        return view('pagrindinis.index')
+        return view('apie_mus.index')
             ->with([
                 'pageText' => $this->decodePageText($this->pageText)
             ]);

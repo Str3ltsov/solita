@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagrindinisController;
+use App\Http\Controllers\ApieMusController;
 use App\Http\Controllers\EsProjektaiController;
 use App\Http\Controllers\PaslaugosController;
 use App\Http\Controllers\KontaktaiController;
@@ -25,7 +26,8 @@ use Illuminate\Support\Facades\Route;
  * Guest routes
  */
 Route::get('/', [PagrindinisController::class, 'index'])->name('pagrindinis');
-Route::get('/es_projektai', [EsProjektaiController::class, 'index'])->name('esProjektai');
+Route::get('/apie-mus', [ApieMusController::class, 'index'])->name('apieMus');
+Route::get('/es-projektai', [EsProjektaiController::class, 'index'])->name('esProjektai');
 Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos');
 Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
 Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
