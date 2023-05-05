@@ -5,25 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContactForm extends Model
+class Contact extends Model
 {
     use HasFactory;
 
-    protected $table = 'contact_forms';
+    protected $table = 'contacts';
 
     protected $fillable = [
-        'name',
-        'email',
-        'topic',
+        'title',
         'description',
         'created_at',
         'updated_at'
     ];
 
     protected $casts = [
-        'name' => 'string',
-        'email' => 'string',
-        'topic' => 'string',
+        'title' => 'string',
         'description' => 'string',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'

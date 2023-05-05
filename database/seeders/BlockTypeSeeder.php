@@ -2,18 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Page;
+use App\Models\BlockType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class PageSeeder extends Seeder
+class BlockTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Page::factory()->count(4)->create();
+        BlockType::factory()->count(2)->create();
     }
 }

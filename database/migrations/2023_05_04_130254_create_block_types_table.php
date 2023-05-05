@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('page_texts', function (Blueprint $table) {
+        Schema::create('block_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('page_id')->nullable()->constrained('pages');
-            $table->longText('html_text');
-            $table->timestamps();
+            $table->string('name', 20);
         });
     }
 
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('page_paragraphs');
+        Schema::dropIfExists('block_types');
     }
 };

@@ -2,18 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Page;
+use App\Models\Contact;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class PageSeeder extends Seeder
+class ContactSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Page::factory()->count(4)->create();
+        Contact::factory()->count(5)->create();
     }
 }
