@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        @include('puslapiai.table')
+                                        @include('admin.pages.table')
                                     </div>
                                 </div>
                             </div>

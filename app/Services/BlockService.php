@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Block;
 
-class BlockService
+class BlockService extends ImageService
 {
     public final function getBlocks(): object
     {

@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\PranesimaiController;
+use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\PuslapiaiController;
-use App\Http\Controllers\PranesimaiController;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,7 +31,7 @@ Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name
  * Admin routes
  */
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::resource('puslapiai', PuslapiaiController::class)->only(['index', 'edit', 'update']);
+    Route::resource('puslapiai', AdminPageController::class)->only(['index', 'edit', 'update']);
     Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
 });
 

@@ -100,7 +100,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4" tabIndex="0">
         <div class="brand-link logo">
             <a href="{{ url('/') }}" class="brand-text pl-2" style="font-size: 1.8rem">
-                <img src="{{ asset('images/Solita_logo.png') }}" alt="Solita" height="50">
+                <img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="50">
             </a>
         </div>
         <div class="sidebar">
