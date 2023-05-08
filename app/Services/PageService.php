@@ -14,7 +14,7 @@ class PageService
 
     public final function getPageByRoute(string $route): object
     {
-        $page = Page::where('route', $route)->get();
+        $page = Page::where('route', $route)->first();
 
         !$page && throw new Error('Failed to get page');
         

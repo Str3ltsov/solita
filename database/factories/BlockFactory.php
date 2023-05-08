@@ -21,6 +21,11 @@ class BlockFactory extends Factory
         'Įmonės veiklos sritys'
     ];
     
+    private array $images = [
+        'images/paslaugos.jpg',
+        'assets/img/skill/paslaugos.jpg'
+    ];
+
     /**
      * Define the model's default state.
      *
@@ -34,7 +39,7 @@ class BlockFactory extends Factory
             'name' => $this->names[self::$counter],
             'title' => $this->titles[self::$counter],
             'text' => null,
-            'image' => null,
+            'image' => $this->images[self::$counter],
             'experience_years' => self::$counter === 0 ? 5 : 0,
             'show_experience' => self::$counter === 0,
             'order' => self::$counter + 1,

@@ -21,7 +21,7 @@ class PageController extends Controller
 
     public function otherPage(string $route)
     {        
-        return view($route.'.index')
+        return view('other.index')
             ->with('page', $this->pService->getPageByRoute($route));
     }
 }

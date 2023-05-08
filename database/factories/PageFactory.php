@@ -31,6 +31,13 @@ class PageFactory extends Factory
         'Įmonės veiklos sritys'
     ];
 
+    private array $images = [
+        '',
+        'images/paslaugos.jpg',
+        'images/es_projektai.png',
+        'images/paslaugos.jpg'
+    ];
+
     /**
      * Define the model's default state.
      *
@@ -45,9 +52,9 @@ class PageFactory extends Factory
             'route' => $this->routes[self::$counter],
             'title' => self::$counter === 0 ? null : $this->titles[self::$counter],
             'text' => null,
-            'image' => null,
-            'experience_years' => self::$counter === 2 ? 5 : 0,
-            'show_experience' => self::$counter === 2,
+            'image' => $this->images[self::$counter],
+            'experience_years' => self::$counter === 2 ? 0 : 5,
+            'show_experience' => self::$counter !== 2,
             'created_at' => now()
         ];
     }
