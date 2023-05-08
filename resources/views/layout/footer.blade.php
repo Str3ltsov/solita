@@ -22,20 +22,13 @@
                             </div>
                             <div class="footer__link">
                                 <ul>
+                                    @foreach ($pages as $page)
+                                        <li>
+                                            <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
+                                        </li>
+                                    @endforeach
                                     <li>
-                                        <a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('apieMus') }}">{{ $pages[\App\Enums\PageEnum::APIE_MUS] }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('esProjektai') }}">{{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('paslaugos') }}">{{ $pages[\App\Enums\PageEnum::PASLAUGOS] }}</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('kontaktai') }}">{{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}</a>
+                                        <a href="{{ route('kontaktai') }}">{{ __('Kontaktai') }}</a>
                                     </li>
                                 </ul>
                             </div>

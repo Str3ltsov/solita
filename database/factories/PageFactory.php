@@ -19,8 +19,8 @@ class PageFactory extends Factory
 
     private array $routes = [
         '',
-        'apie-mus',
-        'es-projektai',
+        'apie_mus',
+        'es_projektai',
         'paslaugos'
     ];
 

@@ -39,20 +39,13 @@
                         <div class="bd-ud-main-menu d-none d-lg-block">
                             <nav id="mobile-menu" style="display: block;">
                                 <ul>
+                                    @foreach ($pages as $page)
+                                        <li class="menu-last">
+                                            <a href="{{ url("/pages/$page->route") }}">{{ $page->name }}</a>
+                                        </li>
+                                    @endforeach
                                     <li class="menu-last">
-                                        <a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
-                                    </li>
-                                    <li class="menu-last">
-                                        <a href="{{ route('apieMus') }}">{{ $pages[\App\Enums\PageEnum::APIE_MUS] }}</a>
-                                    </li>
-                                    <li class="menu-last">
-                                        <a href="{{ route('esProjektai') }}">{{ $pages[\App\Enums\PageEnum::ES_PROJEKTAI] }}</a>
-                                    </li>
-                                    <li class="menu-last">
-                                        <a href="{{ route('paslaugos') }}">{{ $pages[\App\Enums\PageEnum::PASLAUGOS] }}</a>
-                                    </li>
-                                    <li class="menu-last">
-                                        <a href="{{ route('kontaktai') }}">{{ $pages[\App\Enums\PageEnum::KONTAKTAI] }}</a>
+                                        <a href="{{ route('kontaktai') }}">{{ __('Kontaktai') }}</a>
                                     </li>
                                     @auth
                                         <li class="menu-last d-lg-none">
