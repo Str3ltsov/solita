@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\ContactService;
 use App\Services\PageService;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -19,11 +20,14 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(PageService $service): void
+    public function boot(PageService $pService, ContactService $cService): void
     {
         if (!str_contains(url()->current(), 'admin')) {
-            View::composer('*', function($view) use($service) {
-                $view->with('pages', $service->getPages());
+            View::composer('*', function($view) use($pService, $cService) {
+                $view->with([
+                    'pages' => $pService->getPages(),
+                    'contacts' => $cService->getContacts()
+                ]);
             });
         }
     }

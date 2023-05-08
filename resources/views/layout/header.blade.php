@@ -13,17 +13,20 @@
                             <ul>
                                 <li>
                                     <a target="_blank" href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
-                                        <i class="fa-solid fa-location-dot me-2"></i> Taikos pr. 88a, 51182 Kaunas
+                                        <i class="fa-solid fa-location-dot me-2"></i> 
+                                        {{ $contacts[4]->description }}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:info@solita.lt">
-                                        <i class="fa-solid fa-envelope me-2"></i> info@solita.lt
+                                    <a href="mailto:{{ $contacts[3]->description }}">
+                                        <i class="fa-solid fa-envelope me-2"></i> 
+                                        {{ $contacts[3]->description }}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="tel:+37037247749">
-                                        <i class="fa-solid fa-phone me-2"></i> +370 372 47749
+                                    <a href="tel:{{ implode(explode(' ', $contacts[2]->description)) }}">
+                                        <i class="fa-solid fa-phone me-2"></i> 
+                                        {{ $contacts[2]->description }}
                                     </a>
                                 </li>
                             </ul>
@@ -45,7 +48,7 @@
                                         </li>
                                     @endforeach
                                     <li class="menu-last">
-                                        <a href="{{ route('kontaktai') }}">{{ __('Kontaktai') }}</a>
+                                        <a href="{{ route('contacts') }}">{{ __('Kontaktai') }}</a>
                                     </li>
                                     @auth
                                         <li class="menu-last d-lg-none">
@@ -64,7 +67,7 @@
                             <div class="bd-ud-header-bottom-cta-wrapper d-flex align-items-center justify-content-end">
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
                                     @guest
-                                        <a class="bd-ud-btn" href="{{ route('kontaktai') }}">
+                                        <a class="bd-ud-btn" href="{{ route('contacts') }}">
                                             {{ __('Susisiekite su mumis') }}
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>

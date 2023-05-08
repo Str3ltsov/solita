@@ -28,7 +28,7 @@
                                         </li>
                                     @endforeach
                                     <li>
-                                        <a href="{{ route('kontaktai') }}">{{ __('Kontaktai') }}</a>
+                                        <a href="{{ route('contacts') }}">{{ __('Kontaktai') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -46,7 +46,7 @@
                                             <i class="fa-solid fa-tag"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>Įmonės kodas: 304764201</p>
+                                            <p>{{ $contacts[0]->title }}: {{ $contacts[0]->description }}</p>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -54,7 +54,7 @@
                                             <i class="fa-solid fa-file-invoice"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>PVM mokėtojo kodas: LT100011832719</p>
+                                            <p>{{ $contacts[1]->title }}: {{ $contacts[1]->description }}</p>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -62,7 +62,7 @@
                                             <i class="fa-solid fa-phone"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>Telefonas: <a href="tel:+37037247749">+370 372 47749</a></p>
+                                            <p>{{ $contacts[2]->title }}: <a href="tel:{{ implode(explode(' ', $contacts[2]->description)) }}">{{ $contacts[2]->description }}</a></p>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -70,7 +70,7 @@
                                             <i class="fal fa-envelope"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>El. paštas: <a href="mailto:info@solita.lt">info@solita.lt</a></p>
+                                            <p>{{ $contacts[3]->title }}: <a href="mailto:{{ $contacts[3]->description }}">{{ $contacts[3]->description }}</a></p>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -78,9 +78,9 @@
                                             <i class="fal fa-map-marker-alt"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>Adresas:
+                                            <p>{{ $contacts[4]->title }}:
                                             <a target="_blank" href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
-                                                Taikos pr. 88a, 51182 Kaunas
+                                                {{ $contacts[4]->description }}
                                             </a></p>
                                         </div>
                                     </li>

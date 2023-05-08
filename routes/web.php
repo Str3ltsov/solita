@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\PagrindinisController;
-use App\Http\Controllers\ApieMusController;
-use App\Http\Controllers\EsProjektaiController;
-use App\Http\Controllers\PaslaugosController;
-use App\Http\Controllers\KontaktaiController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PuslapiaiController;
 use App\Http\Controllers\PranesimaiController;
@@ -29,12 +25,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('', fn () => redirect()->route('mainPage'));
 Route::get('pages', [PageController::class, 'mainPage'])->name('mainPage');
 Route::get('pages/{route}', [PageController::class, 'otherPage'])->name('otherPage');
-// Route::get('/', [PagrindinisController::class, 'index'])->name('pagrindinis');
-// Route::get('/apie-mus', [ApieMusController::class, 'index'])->name('apieMus');
-// Route::get('/es-projektai', [EsProjektaiController::class, 'index'])->name('esProjektai');
-// Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos');
-Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
-Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
+Route::get('/kontaktai', [ContactController::class, 'contacts'])->name('contacts');
+Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name('submitContactForm');
 
 /*
  * Admin routes
