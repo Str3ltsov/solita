@@ -1,25 +1,18 @@
-<form method="POST" action="{{ route('puslapiai.update', $page->id) }}" class="card card-default" enctype="multipart/form-data" files="true">
+<form method="POST" action="{{ route('puslapiai.update', $page->id) }}" class="card card-default"
+    enctype="multipart/form-data" files="true">
     @csrf
     @method('PUT')
     <div class="card-header">
-        <h3 class="card-title">{{ __('Redaguoti').' '.$page->name }}</h3>
+        <h3 class="card-title">{{ __('Redaguoti') . ' ' . $page->name }}</h3>
     </div>
     <div class="card-body">
         <div class="row">
             <div class="col-xl-4 col-md-6">
                 <div class="form-group">
                     <label>{{ __('Pavadinimas') }}</label>
-                    <input type="text" name="name" class="form-control mb-1 @error('name') is-invalid @enderror" value="{{ $page->name }}">
+                    <input type="text" name="name" class="form-control mb-1 @error('name') is-invalid @enderror"
+                        value="{{ $page->name }}">
                     @error('name')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="form-group">
-                    <label>{{ __('Maršrutas') }}</label>
-                    <input type="text" name="route" class="form-control mb-1 @error('route') is-invalid @enderror" value="{{ $page->route }}">
-                    @error('route')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -27,8 +20,19 @@
             @if ($page->route !== '')
                 <div class="col-xl-4 col-md-6">
                     <div class="form-group">
-                        <label>{{ __('Pavadinimas') }}</label>
-                        <input type="text" name="title" class="form-control mb-1 @error('title') is-invalid @enderror" value="{{ $page->title }}">
+                        <label>{{ __('Maršrutas') }}</label>
+                        <input type="text" name="route"
+                            class="form-control mb-1 @error('route') is-invalid @enderror" value="{{ $page->route }}">
+                        @error('route')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="form-group">
+                        <label>{{ __('Titulas') }}</label>
+                        <input type="text" name="title"
+                            class="form-control mb-1 @error('title') is-invalid @enderror" value="{{ $page->title }}">
                         @error('title')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -39,7 +43,8 @@
                         <label for="exampleInputFile">{{ __('Nuotrauka') }}</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="image" name="image">
+                                <input type="file" class="custom-file-input @error('image') is-invalid @enderror"
+                                    id="image" name="image">
                                 <label class="custom-file-label" for="image">{{ __('Pasirinkti failą') }}</label>
                             </div>
                         </div>
@@ -51,9 +56,12 @@
                 <div class="col-xl-4 col-md-6 col-6">
                     <div class="form-group">
                         <label>{{ __('Rodyti patirtį') }}</label>
-                        <select class="custom-select rounded-0 @error('title') is-invalid @enderror" id="show_experience" name="show_experience">
-                            <option value="0" @if ($page->show_experience == 0) selected @endif>{{ __('Ne') }}</option>
-                            <option value="1" @if ($page->show_experience == 1) selected @endif>{{ __('Taip') }}</option>
+                        <select class="custom-select rounded-0 @error('title') is-invalid @enderror"
+                            id="show_experience" name="show_experience">
+                            <option value="0" @if ($page->show_experience == 0) selected @endif>
+                                {{ __('Ne') }}</option>
+                            <option value="1" @if ($page->show_experience == 1) selected @endif>
+                                {{ __('Taip') }}</option>
                         </select>
                         @error('show_experience')
                             <span class="text-danger">{{ $message }}</span>
@@ -63,7 +71,9 @@
                 <div class="col-xl-4 col-md-6 col-6">
                     <div class="form-group">
                         <label>{{ __('Patirties Metai') }}</label>
-                        <input type="number" name="experience_years" class="form-control mb-1 @error('experience_years') is-invalid @enderror" value="{{ $page->experience_years }}">
+                        <input type="number" name="experience_years"
+                            class="form-control mb-1 @error('experience_years') is-invalid @enderror"
+                            value="{{ $page->experience_years }}">
                         @error('experience_years')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

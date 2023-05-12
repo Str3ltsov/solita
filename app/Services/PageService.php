@@ -17,7 +17,7 @@ class PageService extends ImageService
         $page = Page::where('route', $route)->first();
 
         !$page && throw new Error('Failed to get page');
-        
+
         return $page;
     }
 
@@ -26,7 +26,7 @@ class PageService extends ImageService
         $page = Page::find($id);
 
         !$page && throw new Error('Failed to get page');
-        
+
         return $page;
     }
 

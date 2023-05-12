@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 /*
  * Guest routes
  */
+
 Route::get('', fn () => redirect()->route('mainPage'));
 Route::get('pages', [PageController::class, 'mainPage'])->name('mainPage');
 Route::get('pages/{route}', [PageController::class, 'otherPage'])->name('otherPage');
@@ -32,6 +33,13 @@ Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name
  */
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('puslapiai', AdminPageController::class)->only(['index', 'edit', 'update']);
+    Route::prefix('puslapiai/')->group(function () {
+        Route::get('{id}/edit/add_block', [AdminPageController::class, 'addBlock'])->name('addBlock');
+        Route::post('{id}/edit/add_block', [AdminPageController::class, 'addBlockSave'])->name('addBlockSave');
+        Route::get('{pageId}/edit/edit_block/{blockId}', [AdminPageController::class, 'editBlock'])->name('editBlock');
+        Route::put('{pageId}/edit/edit_block/{blockId}', [AdminPageController::class, 'editBlockSave'])->name('editBlockSave');
+        Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminPageController::class, 'deleteBlock'])->name('deleteBlock');
+    });
     Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
 });
 
