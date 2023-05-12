@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PranesimaiController;
+use App\Http\Controllers\AdminBlockController;
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
@@ -34,11 +35,11 @@ Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('puslapiai', AdminPageController::class)->only(['index', 'edit', 'update']);
     Route::prefix('puslapiai/')->group(function () {
-        Route::get('{id}/edit/add_block', [AdminPageController::class, 'addBlock'])->name('addBlock');
-        Route::post('{id}/edit/add_block', [AdminPageController::class, 'addBlockSave'])->name('addBlockSave');
-        Route::get('{pageId}/edit/edit_block/{blockId}', [AdminPageController::class, 'editBlock'])->name('editBlock');
-        Route::put('{pageId}/edit/edit_block/{blockId}', [AdminPageController::class, 'editBlockSave'])->name('editBlockSave');
-        Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminPageController::class, 'deleteBlock'])->name('deleteBlock');
+        Route::get('{id}/edit/add_block', [AdminBlockController::class, 'addBlock'])->name('addBlock');
+        Route::post('{id}/edit/add_block', [AdminBlockController::class, 'addBlockSave'])->name('addBlockSave');
+        Route::get('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlock'])->name('editBlock');
+        Route::put('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlockSave'])->name('editBlockSave');
+        Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminBlockController::class, 'deleteBlock'])->name('deleteBlock');
     });
     Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
 });
