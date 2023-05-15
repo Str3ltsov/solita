@@ -92,7 +92,7 @@ class AdminPageController extends Controller
         }
     }
 
-    public function destroy(int $id)
+    public function destroy(int $id): RedirectResponse
     {
         try {
             $page = $this->pService->getPageById($id);
