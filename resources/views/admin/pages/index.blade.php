@@ -19,9 +19,16 @@
     </section>
     <section class="content">
         <div class="container-fluid">
+            @include('messages')
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title mt-2">{{ __('Puslapiai') }}</h3>
+                            <a href="{{ route('puslapiai.create') }}" class="btn btn-primary float-right">
+                                {{ __('Sukurti puslapi') }}
+                            </a>
+                        </div>
                         <div class="card-body">
                             <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                 <div class="row">

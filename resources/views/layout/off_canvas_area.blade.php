@@ -12,11 +12,6 @@
                         </button>
                     </div>
                 </div>
-                @auth
-                    <div class="offcanvas__contact mt-30 mb-20">
-                        <span class="text-white">{{ __('Prisijungęs kaip adminas') }}:</span>
-                    </div>
-                @endauth
                 <div class="mobile-menu fix mb-40"></div>
                 <div class="offcanvas__contact mt-30 mb-20">
                     <h4>{{ __('Kontaktinė Info') }}</h4>
@@ -26,7 +21,8 @@
                                 <i class="fal fa-map-marker-alt"></i>
                             </div>
                             <div class="offcanvas__contact-text">
-                                <a target="_blank" href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
+                                <a target="_blank"
+                                    href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
                                     Taikos pr. 88a, 51182 Kaunas
                                 </a>
                             </div>
@@ -44,19 +40,20 @@
                                 <i class="fal fa-envelope"></i>
                             </div>
                             <div class="offcanvas__contact-text">
-                                <a href="mailto:info@solita.lt"><span class="mailto:info@solita.lt">info@solita.lt</span></a>
+                                <a href="mailto:info@solita.lt"><span
+                                        class="mailto:info@solita.lt">info@solita.lt</span></a>
                             </div>
                         </li>
                     </ul>
                 </div>
-{{--                <div class="offcanvas__social">--}}
-{{--                    <ul>--}}
-{{--                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>--}}
-{{--                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>--}}
-{{--                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>--}}
-{{--                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
+                {{--                <div class="offcanvas__social"> --}}
+                {{--                    <ul> --}}
+                {{--                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li> --}}
+                {{--                        <li><a href="#"><i class="fab fa-twitter"></i></a></li> --}}
+                {{--                        <li><a href="#"><i class="fab fa-youtube"></i></a></li> --}}
+                {{--                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li> --}}
+                {{--                    </ul> --}}
+                {{--                </div> --}}
             </div>
         </div>
     </div>

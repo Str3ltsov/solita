@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePageRequest;
 use App\Http\Requests\UpdatePageRequest;
 use App\Services\BlockService;
 use App\Services\PageService;
@@ -24,6 +25,37 @@ class AdminPageController extends Controller
     {
         return view('admin.pages.index')
             ->with('pages', $this->pService->getPages());
+    }
+
+    public function create(): Factory|View|Application
+    {
+        return view('admin.pages.create');
+    }
+
+    public function store(CreatePageRequest $request): RedirectResponse
+    {
+        $validated = $request->validated();
+
+        try {
+            $imagePath = null;
+
+            if (isset($validated['image'])) {
+                $dirPath = public_path() . '/images/uploads';
+                $imageName = $this->pService->getImageName($validated['image']);
+                $imagePath = $this->pService->getImagePath($imageName);
+
+                $this->pService->checkAndCreateDirectory($dirPath);
+                $this->pService->uploadFileToDirectory($validated['image'], $dirPath, $imageName);
+            }
+
+            $this->pService->createPage($validated, $imagePath);
+
+            return redirect()
+                ->route('puslapiai.index')
+                ->with('success', __('Puslapis sėkmingai sukurtas ir išsaugotas'));
+        } catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
     }
 
     public function edit(int $id): Factory|View|Application
@@ -55,6 +87,22 @@ class AdminPageController extends Controller
             $this->pService->updatePage($page, $validated, $imagePath);
 
             return back()->with('success', __('Puslapis sėkmingai atnaujintas ir išsaugotas'));
+        } catch (\Exception $exception) {
+            return back()->with('error', $exception->getMessage());
+        }
+    }
+
+    public function destroy(int $id)
+    {
+        try {
+            $page = $this->pService->getPageById($id);
+
+            $imagePath = public_path() . '/' . $page->image;
+            $this->pService->checkAndDeleteImage($imagePath);
+
+            $page->delete();
+
+            return back()->with('success', __('Puslapis sėkmingai ištrintas'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }

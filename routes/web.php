@@ -34,7 +34,7 @@ Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name
  * Admin routes
  */
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::resource('puslapiai', AdminPageController::class)->only(['index', 'edit', 'update']);
+    Route::resource('puslapiai', AdminPageController::class)->except(['show']);
     Route::prefix('puslapiai/')->group(function () {
         Route::get('{id}/edit/add_block', [AdminBlockController::class, 'addBlock'])->name('addBlock');
         Route::post('{id}/edit/add_block', [AdminBlockController::class, 'addBlockSave'])->name('addBlockSave');

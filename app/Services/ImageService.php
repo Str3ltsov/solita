@@ -15,7 +15,7 @@ class ImageService
 
     public function getImageName(mixed $image): string
     {
-        return time().'.'.$image->getClientOriginalExtension();
+        return time() . '.' . $image->getClientOriginalExtension();
     }
 
     public function uploadFileToDirectory(mixed $image, string $dirPath, string $imageName): void
@@ -25,6 +25,13 @@ class ImageService
 
     public function getImagePath(string $imageName): string
     {
-        return 'images/uploads/'.$imageName;
+        return 'images/uploads/' . $imageName;
+    }
+
+    public function checkAndDeleteImage(string $imagePath): void
+    {
+        if (File::exists($imagePath)) {
+            File::delete($imagePath);
+        }
     }
 }

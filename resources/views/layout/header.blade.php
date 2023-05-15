@@ -5,27 +5,29 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3">
                         <div class="bd-ud-logo logo">
-                            <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo.png') }}" alt="Solita" height="50"></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo.png') }}" alt="Solita"
+                                    height="50"></a>
                         </div>
                     </div>
                     <div class="col-lg-9">
                         <div class="bd-ud-header-middle-info">
                             <ul>
                                 <li>
-                                    <a target="_blank" href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
-                                        <i class="fa-solid fa-location-dot me-2"></i> 
+                                    <a target="_blank"
+                                        href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
+                                        <i class="fa-solid fa-location-dot me-2"></i>
                                         {{ $contacts[4]->description }}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="mailto:{{ $contacts[3]->description }}">
-                                        <i class="fa-solid fa-envelope me-2"></i> 
+                                        <i class="fa-solid fa-envelope me-2"></i>
                                         {{ $contacts[3]->description }}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="tel:{{ implode(explode(' ', $contacts[2]->description)) }}">
-                                        <i class="fa-solid fa-phone me-2"></i> 
+                                        <i class="fa-solid fa-phone me-2"></i>
                                         {{ $contacts[2]->description }}
                                     </a>
                                 </li>
@@ -38,7 +40,7 @@
         <div id="bd-ud-header-sticky" class="bd-ud-header-bottom bd-ud-hm-padd ud-black-bg-1">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-xl-7 col-lg-9 col-4">
+                    <div class="col-xl-8 col-lg-10 col-md-11 col-4">
                         <div class="bd-ud-main-menu d-none d-lg-block">
                             <nav id="mobile-menu" style="display: block;">
                                 <ul>
@@ -52,17 +54,19 @@
                                     </li>
                                     @auth
                                         <li class="menu-last d-lg-none">
-                                            <a href="{{ route('puslapiai.index') }}">{{ __('Administratoriaus panelė') }}</a>
+                                            <a
+                                                href="{{ route('puslapiai.index') }}">{{ __('Administratoriaus panelė') }}</a>
                                         </li>
                                     @endauth
                                 </ul>
                             </nav>
                         </div>
                         <div class="bd-ud-mobile-logo d-lg-none logo">
-                            <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="50"></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo_white.png') }}"
+                                    alt="Solita" height="50"></a>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-3 col-8">
+                    <div class="col-xl-4 col-lg-2 col-md-1 col-8">
                         <div class="bd-ud-header-bottom-cta">
                             <div class="bd-ud-header-bottom-cta-wrapper d-flex align-items-center justify-content-end">
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
@@ -81,7 +85,8 @@
                                 <div class="bd-ud-header-bottom-cta-item d-xl-none">
                                     <div class="bd-ud-header__toggle">
                                         <button class="sidebar__toggle">
-                                            <img src="{{ asset('assets/img/icon/svg/hambergar.svg') }}" alt="hambergar">
+                                            <img src="{{ asset('assets/img/icon/svg/hambergar.svg') }}"
+                                                alt="hambergar">
                                         </button>
                                     </div>
                                 </div>

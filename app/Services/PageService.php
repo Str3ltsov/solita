@@ -30,6 +30,20 @@ class PageService extends ImageService
         return $page;
     }
 
+    public function createPage(array $validated, ?string $imagePath): void
+    {
+        Page::firstOrCreate([
+            'name' => $validated['name'],
+            'route' => $validated['route'],
+            'title' => $validated['title'],
+            'text' => $validated['text'] ?? NULL,
+            'image' => $imagePath ? $imagePath : NULL,
+            'show_experience' => $validated['show_experience'],
+            'experience_years' => $validated['experience_years'] ?? 0,
+            'created_at' => now()
+        ]);
+    }
+
     public final function updatePage(object $page, array $validated, ?string $imagePath): void
     {
         $page->name = $validated['name'];
