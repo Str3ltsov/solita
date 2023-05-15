@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        @include('pranesimai.table')
+                                        @include('admin.messages.message_table')
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PranesimaiController;
+use App\Http\Controllers\AdminMessagesController;
 use App\Http\Controllers\AdminBlockController;
 use App\Http\Controllers\AdminContactController;
 use App\Http\Controllers\AdminPageController;
@@ -43,7 +43,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminBlockController::class, 'deleteBlock'])->name('deleteBlock');
     });
     Route::resource('kontaktai', AdminContactController::class)->only(['index', 'edit', 'update']);
-    Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
+    Route::resource('pranesimai', AdminMessagesController::class)->only(['index', 'destroy']);
 });
 
 
