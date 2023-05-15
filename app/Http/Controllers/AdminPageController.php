@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdatePageRequest;
 use App\Services\BlockService;
-use App\Services\ContactService;
 use App\Services\PageService;
 use App\Traits\SelectOptions;
 use Illuminate\Contracts\Foundation\Application;
@@ -17,11 +16,8 @@ class AdminPageController extends Controller
 {
     use SelectOptions;
 
-    public function __construct(
-        private PageService $pService,
-        private BlockService $bService,
-        private ContactService $cService
-    ) {
+    public function __construct(private PageService $pService, private BlockService $bService)
+    {
     }
 
     public function index(): Factory|View|Application

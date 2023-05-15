@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PranesimaiController;
 use App\Http\Controllers\AdminBlockController;
+use App\Http\Controllers\AdminContactController;
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
@@ -41,6 +42,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::put('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlockSave'])->name('editBlockSave');
         Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminBlockController::class, 'deleteBlock'])->name('deleteBlock');
     });
+    Route::resource('kontaktai', AdminContactController::class)->only(['index', 'edit', 'update']);
     Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
 });
 
