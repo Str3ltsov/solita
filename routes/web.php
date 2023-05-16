@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\PagrindinisController;
-use App\Http\Controllers\ApieMusController;
-use App\Http\Controllers\EsProjektaiController;
-use App\Http\Controllers\PaslaugosController;
-use App\Http\Controllers\KontaktaiController;
-use App\Http\Controllers\PuslapiaiController;
-use App\Http\Controllers\PranesimaiController;
-
+use App\Http\Controllers\AdminMessagesController;
+use App\Http\Controllers\AdminBlockController;
+use App\Http\Controllers\AdminContactController;
+use App\Http\Controllers\AdminPageController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,19 +23,27 @@ use Illuminate\Support\Facades\Route;
 /*
  * Guest routes
  */
-Route::get('/', [PagrindinisController::class, 'index'])->name('pagrindinis');
-Route::get('/apie-mus', [ApieMusController::class, 'index'])->name('apieMus');
-Route::get('/es-projektai', [EsProjektaiController::class, 'index'])->name('esProjektai');
-Route::get('/paslaugos', [PaslaugosController::class, 'index'])->name('paslaugos');
-Route::get('/kontaktai', [KontaktaiController::class, 'index'])->name('kontaktai');
-Route::post('/kontaktai', [KontaktaiController::class, 'submitContactForm'])->name('submitContactForm');
+
+Route::get('', fn () => redirect()->route('mainPage'));
+Route::get('pages', [PageController::class, 'mainPage'])->name('mainPage');
+Route::get('pages/{route}', [PageController::class, 'otherPage'])->name('otherPage');
+Route::get('/kontaktai', [ContactController::class, 'contacts'])->name('contacts');
+Route::post('/kontaktai', [ContactController::class, 'submitContactForm'])->name('submitContactForm');
 
 /*
  * Admin routes
  */
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::resource('puslapiai', PuslapiaiController::class)->only(['index', 'edit', 'update']);
-    Route::resource('pranesimai', PranesimaiController::class)->only(['index', 'destroy']);
+    Route::resource('puslapiai', AdminPageController::class)->except(['show']);
+    Route::prefix('puslapiai/')->group(function () {
+        Route::get('{id}/edit/add_block', [AdminBlockController::class, 'addBlock'])->name('addBlock');
+        Route::post('{id}/edit/add_block', [AdminBlockController::class, 'addBlockSave'])->name('addBlockSave');
+        Route::get('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlock'])->name('editBlock');
+        Route::put('{pageId}/edit/edit_block/{blockId}', [AdminBlockController::class, 'editBlockSave'])->name('editBlockSave');
+        Route::delete('{pageId}/edit/delete_block/{blockId}', [AdminBlockController::class, 'deleteBlock'])->name('deleteBlock');
+    });
+    Route::resource('kontaktai', AdminContactController::class)->only(['index', 'edit', 'update']);
+    Route::resource('pranesimai', AdminMessagesController::class)->only(['index', 'destroy']);
 });
 
 

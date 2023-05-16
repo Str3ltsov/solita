@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             PageSeeder::class,
-            PageTextSeeder::class,
+            BlockTypeSeeder::class,
+            BlockSeeder::class,
+            ContactSeeder::class,
             ContactFormSeeder::class
         ]);
     }

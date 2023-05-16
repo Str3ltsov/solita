@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pages', function (Blueprint $table) {
+        Schema::create('blocks', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
-            $table->string('route', 20)->nullable();
-            $table->string('title', 50)->nullable();
+            $table->string('title', 50);
             $table->mediumText('text')->nullable();
             $table->string('image')->nullable();
             $table->integer('experience_years')->default(0);
             $table->boolean('show_experience')->default(false);
+            $table->integer('order');
+            $table->foreignId('block_type_id')->constrained('block_types');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('blocks');
     }
 };

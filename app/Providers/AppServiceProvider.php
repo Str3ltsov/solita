@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Enums\PageEnum;
-use App\Models\Page;
+use App\Services\ContactService;
+use App\Services\PageService;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -17,29 +17,18 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-    /*
-     * Gets an array of page names.
-     */
-    private function getPageNames(): array
-    {
-        $pageNames = [];
-
-        $pages = Page::select('name')->get();
-
-        foreach ($pages as $key => $page) {
-            $pageNames[$key + 1] = $page->name;
-        }
-
-        return $pageNames;
-    }
-
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot(PageService $pService, ContactService $cService): void
     {
         if (!str_contains(url()->current(), 'admin')) {
-            View::composer('*', fn($view) => $view->with('pages', $this->getPageNames()));
+            View::composer('*', function($view) use($pService, $cService) {
+                $view->with([
+                    'pages' => $pService->getPages(),
+                    'contacts' => $cService->getContacts()
+                ]);
+            });
         }
     }
 }

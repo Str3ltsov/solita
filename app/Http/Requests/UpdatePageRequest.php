@@ -23,20 +23,31 @@ class UpdatePageRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'html_text' => 'required'
+            'route' => 'required|string',
+            'title' => 'required_if:route,!=,|string',
+            'text' => 'nullable',
+            'image' => 'required_if:route,!=,',
+            'show_experience' => 'required_if:route,!=,|boolean',
+            'experience_years' => 'required_if:show_experience,==,1|integer'
         ];
     }
 
-    /**
-     * Custom message for validation
-     *
-     * @return array
-     */
-    public function messages(): array
-    {
-        return [
-            'name.required' => __('Pavadinimas yra privalomas.'),
-            'html_text.required' => __('Tekstas yra privalomas.')
-        ];
-    }
+    // /**
+    //  * Custom message for validation
+    //  *
+    //  * @return array
+    //  */
+    // public function messages(): array
+    // {
+    //     return [
+    //         'name.required' => __('Pavadinimas yra privalomas.'),
+    //         'route.required' => __(''),
+    //         'route.unique' => __(''),
+    //         'title.required' => __(''),
+    //         'text.required' => __('Tekstas yra privalomas.'),
+    //         'image.required' => __(''),
+    //         'show_experience' => __(''),
+    //         'experience_years.required' => __('')
+    //     ];
+    // }
 }
