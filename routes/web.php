@@ -61,4 +61,11 @@ Route::get('logout', function () {
     return back()->with('success', __('Sėkmingai atsijungėte'));
 })->name('getLogout');
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/*
+ * Language route
+ */
+Route::get('/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return back();
+});
