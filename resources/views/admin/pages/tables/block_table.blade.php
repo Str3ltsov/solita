@@ -2,19 +2,19 @@
     <thead>
         <tr>
             <th class="sorting sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-sort="ascending" aria-label="Tvarka">{{ __('Tvarka') }}</th>
+                aria-sort="ascending" aria-label="{{ __('inputs.order') }}">{{ __('inputs.order') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Pavadinimas">{{ __('Pavadinimas') }}</th>
+                aria-label="{{ __('inputs.name') }}">{{ __('inputs.name') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Titulas">{{ __('Titulas') }}</th>
+                aria-label="{{ __('inputs.title') }}">{{ __('inputs.title') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Bloko tipas">{{ __('Bloko tipas') }}</th>
+                aria-label="{{ __('inputs.blockType') }}">{{ __('inputs.blockType') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Sukūrimo data">{{ __('Sukūrimo data') }}</th>
+                aria-label="{{ __('inputs.createDate') }}">{{ __('inputs.createDate') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Atnaujinimo data">{{ __('Atnaujinimo data') }}</th>
+                aria-label="{{ __('inputs.updateDate') }}">{{ __('inputs.updateDate') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Veiksmai">{{ __('Veiksmai') }}</th>
+                aria-label="{{ __('inputs.actions') }}">{{ __('inputs.actions') }}</th>
         </tr>
     </thead>
     <tbody>
@@ -39,13 +39,13 @@
     </tbody>
     <tfoot>
         <tr>
-            <th rowspan="1" colspan="1">{{ __('Tvarka') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Pavadinimas') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Titulas') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Bloko tipas') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Sukūrimo data') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Atnaujinimo data') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Veiksmai') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.order') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.name') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.title') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.blockType') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.createDate') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.updateDate') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.actions') }}</th>
         </tr>
     </tfoot>
 </table>

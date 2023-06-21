@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'adminSuccessLogin' => 'Successfully logged in as administrator',
-    'adminSuccessLogout' => 'Successfully logged out',
-    'errorUnauthorized' => 'Unauthorized access'
+    'failed' => 'Šie kredencialai neatitinka mūsų įrašų.',
+    'password' => 'Pateiktas slaptažodis yra neteisingas.',
+    'throttle' => 'Per daug bandymų prisijungti. Bandykite dar kartą po :seconds sekundžių.',
+    'adminSuccessLogin' => 'Sėkmingai prisijungėte kaip administratorius',
+    'adminSuccessLogout' => 'Sėkmingai atsijungėte',
+    'errorUnauthorized' => 'Neteisėta prieiga'
 
 ];

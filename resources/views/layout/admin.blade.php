@@ -146,14 +146,14 @@
                         data-accordion="false">
 
                         <li class="nav-header">
-                            {{ __('Meniu') }}
+                            {{ __('menu.menu') }}
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('puslapiai.index') }}"
                                 class="nav-link @if (str_contains(url()->current(), 'puslapiai')) active @endif">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    {{ __('Puslapiai') }}
+                                    {{ __('menu.pages') }}
                                 </p>
                             </a>
                         </li>
@@ -162,7 +162,7 @@
                                 class="nav-link @if (str_contains(url()->current(), 'kontaktai')) active @endif">
                                 <i class="fa-solid fa-address-book mr-2" style="margin-left: 6px"></i>
                                 <p>
-                                    {{ __('Kontaktai') }}
+                                    {{ __('menu.contacts') }}
                                 </p>
                             </a>
                         </li>
@@ -171,7 +171,7 @@
                                 class="nav-link @if (str_contains(url()->current(), 'pranesimai')) active @endif">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
-                                    {{ __('Pranešimai') }}
+                                    {{ __('menu.messages') }}
                                 </p>
                             </a>
                         </li>
@@ -182,7 +182,7 @@
                                     onclick="event.preventDefault(); confirm('{{ __('Ar tikrai norite atsijungti?') }}') && document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-right-from-bracket mr-1 pr-1"></i>
                                     <p>
-                                        {{ __('Atsijungti') }}
+                                        {{ __('menu.logout') }}
                                     </p>
                                 </a>
                             </form>
@@ -197,7 +197,7 @@
         </div>
 
         <footer class="main-footer">
-            <strong>{{ __('Visos teisės saugomos © 2018-2023 UAB "Solita"') }}</strong>
+            <strong>{{ __('footer.allRightsReserved') . ' © 2018-2023 UAB "Solita"' }}</strong>
         </footer>
 
         <aside class="control-sidebar control-sidebar-dark" style="display: none; top: 57px; height: 798px;">

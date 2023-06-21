@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{ __('Puslapiai') }}</h1>
+                    <h1>{{ __('pages.pages') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('pages.main') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('Puslapiai') }}</li>
+                        <li class="breadcrumb-item active">{{ __('pages.pages') }}</li>
                     </ol>
                 </div>
             </div>
@@ -24,9 +24,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title mt-2">{{ __('Puslapiai') }}</h3>
+                            <h3 class="card-title mt-2">{{ __('pages.pages') }}</h3>
                             <a href="{{ route('puslapiai.create') }}" class="btn btn-primary float-right">
-                                {{ __('Sukurti puslapi') }}
+                                {{ __('pages.createPage') }}
                             </a>
                         </div>
                         <div class="card-body">

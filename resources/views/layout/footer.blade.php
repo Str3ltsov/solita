@@ -6,11 +6,11 @@
                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__widget footer-col-1 mb-60">
                             <div class="footer__title">
-                                <h4>{{ __('Apie mus') }}</h4>
+                                <h4>{{ __('footer.aboutUs') }}</h4>
                             </div>
                             <div class="footer__content">
                                 <p>
-                                    {{ __('Individualios programinės įrangos kūrimas ir IT ekspertai jūsų verslui.') }}
+                                    {{ __('footer.description') }}
                                 </p>
                             </div>
                         </div>
@@ -18,7 +18,7 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="footer__widget footer-col-2 mb-60">
                             <div class="footer__title">
-                                <h4>{{ __('Puslapiai') }}</h4>
+                                <h4>{{ __('footer.pages') }}</h4>
                             </div>
                             <div class="footer__link">
                                 <ul>
@@ -28,7 +28,7 @@
                                         </li>
                                     @endforeach
                                     <li>
-                                        <a href="{{ route('contacts') }}">{{ __('Kontaktai') }}</a>
+                                        <a href="{{ route('contacts') }}">{{ __('menu.contacts') }}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -37,7 +37,7 @@
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-6">
                         <div class="footer__widget footer-col-4 mb-60">
                             <div class="footer__title">
-                                <h4>{{ __('Kontaktai') }}</h4>
+                                <h4>{{ __('footer.contacts') }}</h4>
                             </div>
                             <div class="footer__contact">
                                 <ul class="d-flex flex-column gap-3">
@@ -62,7 +62,9 @@
                                             <i class="fa-solid fa-phone"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>{{ $contacts[2]->title }}: <a href="tel:{{ implode(explode(' ', $contacts[2]->description)) }}">{{ $contacts[2]->description }}</a></p>
+                                            <p>{{ $contacts[2]->title }}: <a
+                                                    href="tel:{{ implode(explode(' ', $contacts[2]->description)) }}">{{ $contacts[2]->description }}</a>
+                                            </p>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -70,7 +72,9 @@
                                             <i class="fal fa-envelope"></i>
                                         </div>
                                         <div class="offcanvas__contact-text">
-                                            <p>{{ $contacts[3]->title }}: <a href="mailto:{{ $contacts[3]->description }}">{{ $contacts[3]->description }}</a></p>
+                                            <p>{{ $contacts[3]->title }}: <a
+                                                    href="mailto:{{ $contacts[3]->description }}">{{ $contacts[3]->description }}</a>
+                                            </p>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center">
@@ -79,9 +83,11 @@
                                         </div>
                                         <div class="offcanvas__contact-text">
                                             <p>{{ $contacts[4]->title }}:
-                                            <a target="_blank" href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
-                                                {{ $contacts[4]->description }}
-                                            </a></p>
+                                                <a target="_blank"
+                                                    href="https://www.google.com/maps/place/Taikos+pr.+88A,+51182+Kaunas/data=!4m2!3m1!1s0x46e71844c01926cf:0xa2937b6d3b4e5c5?sa=X&ved=2ahUKEwjQzrypv7X9AhVLw4sKHd-WDTUQ8gF6BAgUEAI">
+                                                    {{ $contacts[4]->description }}
+                                                </a>
+                                            </p>
                                         </div>
                                     </li>
                                 </ul>
@@ -96,16 +102,12 @@
                         <div class="row align-items-center">
                             <div class="col-md-6 col-sm-6">
                                 <div class="footer__logo logo logo-footer">
-                                    <a href="{{ url('/') }}"><img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita" height="40"></a>
+                                    <a href="{{ url('/') }}">
+                                        <img src="{{ asset('images/Solita_logo_white.png') }}" alt="Solita"
+                                            height="40">
+                                    </a>
                                 </div>
                             </div>
-{{--                            <div class="col-md-6 col-sm-6">--}}
-{{--                                <div class="footer__link-3 text-md-end">--}}
-{{--                                    <ul>--}}
-{{--                                        <li><a href="javascript:void(0)"></a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -114,7 +116,7 @@
         <div class="footer__copyright">
             <div class="container">
                 <div class="copyright__text">
-                    <p>{{ __('Visos teisės saugomos © 2018-2023 UAB "Solita"') }}</p>
+                    <p>{{ __('footer.allRightsReserved') . ' © 2018-2023 UAB "Solita"' }}</p>
                 </div>
             </div>
         </div>

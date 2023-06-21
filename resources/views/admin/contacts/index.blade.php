@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{ __('Kontaktai') }}</h1>
+                    <h1>{{ __('pages.contacts') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
+                        <li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('pages.main') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('Kontaktai') }}</li>
+                        <li class="breadcrumb-item active">{{ __('pages.contacts') }}</li>
                     </ol>
                 </div>
             </div>
@@ -24,9 +24,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title mt-2">{{ __('Kontaktai') }}</h3>
+                            <h3 class="card-title mt-2">{{ __('pages.contacts') }}</h3>
                             <a href="{{ route('contacts') }}" class="btn btn-primary float-right">
-                                {{ __('Peržiūrėti kontaktus') }}
+                                {{ __('buttons.viewContacts') }}
                             </a>
                         </div>
                         <div class="card-body">

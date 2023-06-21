@@ -37,10 +37,10 @@ class CreateContactFormRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => __('Vardo laukas yra privalomas.'),
-            'email.required' => __('El. pašto laukas yra privalomas.'),
-            'email.email' => __('El. pašto lauke turi būti galiojantis el. pašto adresas.'),
-            'topic.required' => __('Temos laukas yra privalomas.')
+            'name.required' => __('rules.nameRequired'),
+            'email.required' => __('rules.emailRequired'),
+            'email.email' => __('rules.emailEmail'),
+            'topic.required' => __('rules.topicRequired')
         ];
     }
 }

@@ -14,7 +14,9 @@ use Exception;
 
 class ContactController extends Controller
 {
-    public function __construct(private ContactService $service) {}
+    public function __construct(private ContactService $service)
+    {
+    }
 
     public function contacts(): Factory|View|Application
     {
@@ -33,12 +35,11 @@ class ContactController extends Controller
                 $validated['name'],
                 $validated['email'],
                 $validated['topic'],
-                $validated['description'] ?? __('Nėra aprašymo')
+                $validated['description'] ?? __('messages.noDescription')
             ));
 
-            return back()->with('success', __('Forma sėkmingai pateikta'));
-        }
-        catch (Exception $exception) {
+            return back()->with('success', __('messages.successContactForm'));
+        } catch (Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
     }

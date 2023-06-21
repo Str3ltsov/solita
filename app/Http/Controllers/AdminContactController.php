@@ -36,7 +36,7 @@ class AdminContactController extends Controller
             $this->service->updateContact($this->service->getContactById($id), $validated);
 
             return redirect(route('kontaktai.edit', $id))
-                ->with('success', __('Kontaktas sėkmingai atnaujintas ir išsaugotas'));
+                ->with('success', __('messages.successUpdateContact'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }

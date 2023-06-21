@@ -16,7 +16,7 @@ class BlockService extends ImageService
     {
         $block = Block::find($id);
 
-        !$block && throw new Error('Failed to get block');
+        !$block && throw new Error('messages.errorGetBlock');
 
         return $block;
     }

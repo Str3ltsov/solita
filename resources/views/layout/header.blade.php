@@ -50,12 +50,11 @@
                                         </li>
                                     @endforeach
                                     <li class="menu-last">
-                                        <a href="{{ route('contacts') }}">{{ __('Kontaktai') }}</a>
+                                        <a href="{{ route('contacts') }}">{{ __('pages.contacts') }}</a>
                                     </li>
                                     @auth
                                         <li class="menu-last d-lg-none">
-                                            <a
-                                                href="{{ route('puslapiai.index') }}">{{ __('Administratoriaus panelė') }}</a>
+                                            <a href="{{ route('puslapiai.index') }}">{{ __('buttons.adminPanel') }}</a>
                                         </li>
                                     @endauth
                                 </ul>
@@ -72,12 +71,12 @@
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
                                     @guest
                                         <a class="bd-ud-btn" href="{{ route('contacts') }}">
-                                            {{ __('Susisiekite su mumis') }}
+                                            {{ __('buttons.contactUs') }}
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>
                                     @else
                                         <a class="bd-ud-btn" href="{{ route('puslapiai.index') }}">
-                                            {{ __('Administratoriaus panelė') }}
+                                            {{ __('buttons.adminPanel') }}
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>
                                     @endguest

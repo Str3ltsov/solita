@@ -4,17 +4,17 @@
             <th class="sorting sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
                 aria-sort="ascending" aria-label="ID">{{ __('ID') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Vardass">{{ __('Vardas') }}</th>
+                aria-label="{{ __('inputs.name') }}">{{ __('inputs.name') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="El. paštas">{{ __('El. paštas') }}</th>
+                aria-label="{{ __('inputs.email') }}">{{ __('inputs.email') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Tema">{{ __('Tema') }}</th>
+                aria-label="{{ __('inputs.topic') }}">{{ __('inputs.topic') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Aprašymas">{{ __('Aprašymas') }}</th>
+                aria-label="{{ __('inputs.description') }}">{{ __('inputs.description') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Sukūrimo data">{{ __('Sukūrimo data') }}</th>
+                aria-label="{{ __('inputs.createDate') }}">{{ __('inputs.createDate') }}</th>
             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"
-                aria-label="Veiksmai">{{ __('Veiksmai') }}</th>
+                aria-label="{{ __('inputs.actions') }}">{{ __('inputs.actions') }}</th>
         </tr>
     </thead>
     <tbody>
@@ -35,12 +35,12 @@
     <tfoot>
         <tr>
             <th rowspan="1" colspan="1">{{ __('ID') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Vardas') }}</th>
-            <th rowspan="1" colspan="1">{{ __('El. paštas') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Tema') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Aprašymas') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Sukūrimo data') }}</th>
-            <th rowspan="1" colspan="1">{{ __('Veiksmai') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.name') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.email') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.topic') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.description') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.createDate') }}</th>
+            <th rowspan="1" colspan="1">{{ __('inputs.actions') }}</th>
         </tr>
     </tfoot>
 </table>

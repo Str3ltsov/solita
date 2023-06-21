@@ -15,7 +15,7 @@
                                 <div class="about__experience-shape">
                                     <div class="about__experience-content">
                                         <h2>{{ $page->experience_years }}</h2>
-                                        <span>metų patiritis</span>
+                                        <span>{{ __('pages.experienceYears') }}</span>
                                         <div class="about__experience-shape-icon">
                                             <i class="fal fa-trophy-alt"></i>
                                         </div>

@@ -17,7 +17,7 @@ class ContactService
     {
         $contact = Contact::find($id);
 
-        !$contact && throw new Error('Failed to get contact');
+        !$contact && throw new Error('messages.errorGetContact');
 
         return $contact;
     }
