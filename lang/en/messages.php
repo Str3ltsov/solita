@@ -11,6 +11,7 @@ return [
     'successDeletePage' => 'Page deleted successfully',
     'errorGetPage' => 'Failed to get page',
     'deletePageConfirmation' => 'Are you sure you want to delete this page?',
+    'errorDeleteMainPage' => 'Cannot delete main page.',
 
     // Blocks
     'successCreateBlock' => 'Block successfully created and saved',

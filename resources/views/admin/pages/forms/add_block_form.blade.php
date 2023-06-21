@@ -6,25 +6,29 @@
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-xl-4 col-md-6">
-                <div class="form-group">
-                    <label>{{ __('inputs.name') }}</label>
-                    <input type="text" name="name" class="form-control mb-1 @error('name') is-invalid @enderror">
-                    @error('name')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
+            @foreach (config('translatable.locales') as $locale)
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>{{ __('inputs.name').' '.strtoupper($locale) }}</label>
+                        <input type="text" name="{{ 'name_'.$locale }}" class="form-control mb-1 @error("name_$locale") is-invalid @enderror">
+                        @error("name_$locale")
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="form-group">
-                    <label>{{ __('inputs.title') }}</label>
-                    <input type="text" name="title" class="form-control mb-1 @error('title') is-invalid @enderror">
-                    @error('title')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
+            @endforeach
+            @foreach (config('translatable.locales') as $locale)
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>{{ __('inputs.title').' '.strtoupper($locale) }}</label>
+                        <input type="text" name="{{ 'title_'.$locale }}" class="form-control mb-1 @error("title_$locale") is-invalid @enderror">
+                        @error("title_$locale")
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
+            @endforeach
+            <div class="col-xl-3 col-md-6">
                 <div class="form-group">
                     <label for="exampleInputFile">{{ __('inputs.image') }}</label>
                     <div class="input-group">
@@ -88,16 +92,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <div class="form-group">
-                    <label>{{ __('inputs.text') }}</label>
-                    <textarea class="form-control text-muted @error('text') is-invalid @enderror" name="text" id="editor">
-                    </textarea>
-                    @error('text')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
+            @foreach (config('translatable.locales') as $locale)
+                <div class="col-12">
+                    <div class="form-group">
+                        <label>{{ __('inputs.text').' '.strtoupper($locale) }}</label>
+                        <textarea class="form-control text-muted @error("text_$locale") is-invalid @enderror" name="{{ 'text_'.$locale }}" id="{{ 'editor_'.$locale }}">
+                        </textarea>
+                        @error("text_$locale")
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="card-footer">

@@ -51,7 +51,7 @@ class AdminBlockController extends Controller
             $this->bService->createBlock($validated, $imagePath);
 
             return redirect(route('puslapiai.edit', $id))
-                ->with('success', __('messages.successsCreateBlock'));
+                ->with('success', __('messages.successCreateBlock'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }

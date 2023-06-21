@@ -97,6 +97,10 @@ class AdminPageController extends Controller
         try {
             $page = $this->pService->getPageById($id);
 
+            if ($page->route == '' || $page->route == null) {
+                return back()->with('error', __('messages.errorDeleteMainPage'));
+            }
+
             $imagePath = public_path() . '/' . $page->image;
             $this->pService->checkAndDeleteImage($imagePath);
 

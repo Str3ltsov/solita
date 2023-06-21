@@ -36,7 +36,10 @@
 @push('scripts')
     <script>
         ClassicEditor
-            .create(document.querySelector('#editor'), {})
+            .create(document.querySelector('#editor_lt'), {})
             .catch(error => console.error(error));
+        ClassicEditor
+            .create(document.querySelector('#editor_en'), {})
+            .catch(error => console.error(error));    
     </script>
 @endpush

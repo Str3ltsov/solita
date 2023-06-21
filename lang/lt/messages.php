@@ -11,6 +11,7 @@ return [
     'successDeletePage' => 'Puslapis sėkmingai ištrintas',
     'errorGetPage' => 'Nepavyko gauti puslapio',
     'deletePageConfirmation' => 'Ar tikrai norite ištrinti šį puslapį?',
+    'errorDeleteMainPage' => 'Negalima ištrinti pagrindinio puslapio.',
 
     // Blocks
     'successCreateBlock' => 'Blokas sėkmingai sukurtas ir išsaugotas',

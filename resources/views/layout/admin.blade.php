@@ -9,11 +9,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css') }}">
     <link href="{{ asset('fontawesome-free-6.3.0-web/css/all.css') }}" rel="stylesheet">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/dist/css/adminlte.min.css') }}">
+    
     <style>
         .logo {
             font-size: 36px;
@@ -74,8 +77,12 @@
                 margin-top: 10px;
             }
         }
+
+        .ck-editor__editable_inline { min-height: 200px }
     </style>
+
     @stack('styles')
+
 </head>
 
 <body class="sidebar-mini layout-fixed" style="height: auto;">

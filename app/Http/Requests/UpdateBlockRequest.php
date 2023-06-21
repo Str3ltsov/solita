@@ -22,14 +22,17 @@ class UpdateBlockRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'title' => 'required|string',
+            'name_lt' => 'required|string',
+            'name_en' => 'required|string',
+            'title_lt' => 'required|string',
+            'title_en' => 'required|string',
             'image' => 'image',
             'block_type_id' => 'required|integer',
             'show_experience' => 'required|boolean',
             'experience_years' => 'required_if:show_experience,==,1',
             'order' => 'required|integer',
-            'text' => 'nullable'
+            'text_lt' => 'nullable',
+            'text_en' => 'nullable'
         ];
     }
 }

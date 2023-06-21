@@ -31,7 +31,9 @@
                         <a href="{{ route('puslapiai.edit', $page->id) }}">
                             <i class="fa-solid fa-pen-to-square text-dark ml-2"></i>
                         </a>
-                        @include('admin.pages.forms.delete_page_form')
+                        @if ($page->route != '' || $page->route != null)
+                            @include('admin.pages.forms.delete_page_form')
+                        @endif
                     </div>
                 </td>
             </tr>
