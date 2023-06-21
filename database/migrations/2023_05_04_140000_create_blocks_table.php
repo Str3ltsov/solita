@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('title', 50);
-            $table->mediumText('text')->nullable();
             $table->string('image')->nullable();
             $table->integer('experience_years')->default(0);
             $table->boolean('show_experience')->default(false);

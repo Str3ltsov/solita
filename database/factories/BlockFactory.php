@@ -11,16 +11,29 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class BlockFactory extends Factory
 {
     private static int $counter = -1;
+
     private array $names = [
-        'Apie mus',
-        'Paslaugos'
+        'lt' => [
+            'Apie mus',
+            'Paslaugos'
+        ],
+        'en' => [
+            'About us',
+            'Services'
+        ]
     ];
 
     private array $titles = [
-        'Įmonės misija',
-        'Įmonės veiklos sritys'
+        'lt' => [
+            'Įmonės misija',
+            'Įmonės veiklos sritys'
+        ],
+        'en' => [
+            'Corporate mission',
+            "Company's activities"
+        ]
     ];
-    
+
     private array $images = [
         'images/paslaugos.jpg',
         'assets/img/skill/paslaugos.jpg'
@@ -34,10 +47,16 @@ class BlockFactory extends Factory
     public function definition(): array
     {
         self::$counter += 1;
-        
+
         return [
-            'name' => $this->names[self::$counter],
-            'title' => $this->titles[self::$counter],
+            'lt' => [
+                'name' => $this->names['lt'][self::$counter],
+                'title' => $this->titles['lt'][self::$counter],
+            ],
+            'en' => [
+                'name' => $this->names['en'][self::$counter],
+                'title' => $this->titles['en'][self::$counter],
+            ],
             'text' => null,
             'image' => $this->images[self::$counter],
             'experience_years' => self::$counter === 0 ? 5 : 0,

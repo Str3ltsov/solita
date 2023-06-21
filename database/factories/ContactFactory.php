@@ -10,12 +10,22 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class ContactFactory extends Factory
 {
     private static int $counter = -1;
+
     private array $titles = [
-        'Įmonės kodas',
-        'PVM mokėtojo kodas',
-        'Telefonas',
-        'El. paštas',
-        'Adresas'
+        'lt' => [
+            'Įmonės kodas',
+            'PVM mokėtojo kodas',
+            'Telefonas',
+            'El. paštas',
+            'Adresas'
+        ],
+        'en' => [
+            "Company code",
+            "VAT code",
+            "Telephone",
+            "Email",
+            "Address"
+        ]
     ];
 
     private array $descriptions = [
@@ -34,9 +44,14 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         self::$counter += 1;
-        
+
         return [
-            'title' => $this->titles[self::$counter],
+            'lt' => [
+                'title' => $this->titles['lt'][self::$counter]
+            ],
+            'en' => [
+                'title' => $this->titles['en'][self::$counter]
+            ],
             'description' => $this->descriptions[self::$counter],
             'created_at' => now()
         ];

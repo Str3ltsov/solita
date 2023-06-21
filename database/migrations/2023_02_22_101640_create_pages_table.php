@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
             $table->string('route', 20)->nullable();
-            $table->string('title', 50)->nullable();
-            $table->mediumText('text')->nullable();
             $table->string('image')->nullable();
             $table->integer('experience_years')->default(0);
             $table->boolean('show_experience')->default(false);
