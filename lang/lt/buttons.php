@@ -9,7 +9,7 @@ return [
     // Admin
     'login' => 'Prisijungti',
     'rememberMe' => 'Prisiminti mane',
-    'adminPanel' => 'Administratoriaus skydelis',
+    'adminPanel' => 'Admino skydelis',
     'createPage' => 'Sukurti puslapį',
     'createAndSave' => 'Sukurti ir išsaugoti',
     'returnBack' => 'Grįžti atgal',

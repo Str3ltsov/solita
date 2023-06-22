@@ -194,6 +194,24 @@
                                 </a>
                             </form>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-language ml-1 mr-2"></i>
+                                <p>
+                                    {{ config('app.locales.'.app()->getLocale()) }}
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                @foreach (config('app.locales') as $key => $locale)
+                                    <li class="nav-item">
+                                        <a href="/{{ $key }}" class="nav-link @if ($key == app()->getLocale()) active @endif">
+                                            <p>{{ $locale }}</p>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
