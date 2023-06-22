@@ -27,4 +27,7 @@ return [
     // Messages
     'successDeleteMessage' => 'Messages successfully deleted',
     'errorGetContactForm' => 'Failed to get contact form',
+
+    // Auth
+    'confirmLogout' => 'Are you sure you want to logout?'
 ];

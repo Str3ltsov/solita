@@ -26,5 +26,8 @@ return [
 
     // Messages
     'successDeleteMessage' => 'Pranešimas sėkmingai ištrintas',
-    'errorGetContactForm' => 'Nepavyko gauti kontaktinės formos'
+    'errorGetContactForm' => 'Nepavyko gauti kontaktinės formos',
+
+    // Auth
+    'confirmLogout' => 'Ar tikrai norite atsijungti?'
 ];

@@ -186,7 +186,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="nav-link">
                                 @csrf
                                 <a class="col-12 d-inline-block" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); confirm('{{ __('Ar tikrai norite atsijungti?') }}') && document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault(); confirm('{{ __('messages.confirmLogout') }}') && document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-right-from-bracket mr-1 pr-1"></i>
                                     <p>
                                         {{ __('menu.logout') }}
