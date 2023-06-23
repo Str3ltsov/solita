@@ -53,7 +53,7 @@
                         id="block_type_id" name="block_type_id">
                         @foreach ($blockTypes as $key => $blockType)
                             <option value="{{ $key }}" @if ($key == $block->block_type_id) selected @endif>
-                                {{ __($blockType) }}
+                                {{ __('options.' . strtolower($blockType)) }}
                             </option>
                         @endforeach
                     </select>
@@ -82,7 +82,7 @@
                     <label>{{ __('inputs.experienceYears') }}</label>
                     <input type="number" name="experience_years"
                         class="form-control mb-1 @error('experience_years') is-invalid @enderror" min="1"
-                        value="{{ $block->experience_years }}">
+                        value="{{ $block->experience_years ? $block->experience_years : null }}">
                     @error('experience_years')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
