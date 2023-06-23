@@ -2,20 +2,25 @@
 
 namespace App\Models;
 
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Block extends Model
+class Block extends Model implements TranslatableContract
 {
-    use HasFactory;
+    use HasFactory, Translatable;
+
+    public $translatedAttributes = [
+        'name',
+        'title',
+        'text'
+    ];
 
     protected $table = 'blocks';
 
     protected $fillable = [
-        'name',
-        'title',
-        'text',
         'image',
         'experience_years',
         'show_experience',
@@ -26,9 +31,6 @@ class Block extends Model
     ];
 
     protected $casts = [
-        'name' => 'string',
-        'title' => 'string',
-        'text' => 'array',
         'image' => 'string',
         'experience_years' => 'integer',
         'show_experience' => 'boolean',

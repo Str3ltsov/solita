@@ -22,10 +22,13 @@ class UpdatePageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
+            'name_lt' => 'required|string',
+            'name_en' => 'required|string',
             'route' => 'required|string',
-            'title' => 'required_if:route,!=,|string',
-            'text' => 'nullable',
+            'title_lt' => 'required_if:route,!=,|string',
+            'title_en' => 'required_if:route,!=,|string',
+            'text_lt' => 'nullable',
+            'text_en' => 'nullable',
             'image' => 'required_if:route,!=,',
             'show_experience' => 'required_if:route,!=,|boolean',
             'experience_years' => 'required_if:show_experience,==,1|integer'

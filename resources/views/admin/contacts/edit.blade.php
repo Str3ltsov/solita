@@ -5,17 +5,17 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{ __('Redaguoti') . ' ' . $contact->title }}</h1>
+                    <h1>{{ __('pages.editContact') . ' ' . $contact->title }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
+                            <a href="{{ url('/') }}">{{ __('pages.main') }}</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('kontaktai.index') }}">{{ __('Kontaktai') }}</a>
+                            <a href="{{ route('kontaktai.index') }}">{{ __('pages.contacts') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('Redaguoti') . ' ' . $contact->title }}</li>
+                        <li class="breadcrumb-item active">{{ __('pages.editContact') . ' ' . $contact->title }}</li>
                     </ol>
                 </div>
             </div>

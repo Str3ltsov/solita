@@ -27,7 +27,7 @@ class AdminMessagesController extends Controller
             $message = $this->service->getContactFormById($id);
             $message->delete();
 
-            return back()->with('success', __('Pranešimas sėkmingai ištrintas'));
+            return back()->with('success', __('messages.successDeleteMessage'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }

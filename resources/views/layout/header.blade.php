@@ -50,12 +50,11 @@
                                         </li>
                                     @endforeach
                                     <li class="menu-last">
-                                        <a href="{{ route('contacts') }}">{{ __('Kontaktai') }}</a>
+                                        <a href="{{ route('contacts') }}">{{ __('pages.contacts') }}</a>
                                     </li>
                                     @auth
                                         <li class="menu-last d-lg-none">
-                                            <a
-                                                href="{{ route('puslapiai.index') }}">{{ __('Administratoriaus panelė') }}</a>
+                                            <a href="{{ route('puslapiai.index') }}">{{ __('buttons.adminPanel') }}</a>
                                         </li>
                                     @endauth
                                 </ul>
@@ -69,15 +68,32 @@
                     <div class="col-xl-4 col-lg-2 col-md-1 col-8">
                         <div class="bd-ud-header-bottom-cta">
                             <div class="bd-ud-header-bottom-cta-wrapper d-flex align-items-center justify-content-end">
-                                <div class="bd-ud-header-bottom-cta-item d-none d-xl-block">
+                                <div class="bd-ud-header-top-lang style-1">
+                                    <select style="display: none;">
+                                        @foreach (config('app.locales') as $locale)
+                                            <option>{{ $locale }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="nice-select fs-6" tabindex="0">
+                                        <span class="current">{{ config('app.locales.'.app()->getLocale()) }}</span>
+                                        <ul class="list">
+                                            @foreach (config('app.locales') as $key => $locale)
+                                                <li data-value="{{ strtoupper($locale) }}" class="px-4 option @if ($key == app()->getLocale()) selected focus @endif">
+                                                    <a href="/{{ $key }}" class="mx-0 px-0">{{ $locale }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                 </div>
+                                <div class="bd-ud-header-bottom-cta-item d-none d-xl-block ms-4">
                                     @guest
                                         <a class="bd-ud-btn" href="{{ route('contacts') }}">
-                                            {{ __('Susisiekite su mumis') }}
+                                            {{ __('buttons.contactUs') }}
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>
                                     @else
                                         <a class="bd-ud-btn" href="{{ route('puslapiai.index') }}">
-                                            {{ __('Administratoriaus panelė') }}
+                                            {{ __('buttons.adminPanel') }}
                                             <i class="fa-solid fa-chevron-right fs-6 ms-2"></i>
                                         </a>
                                     @endguest

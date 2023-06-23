@@ -5,17 +5,17 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{ __('Sukurti puslapį') }}</h1>
+                    <h1>{{ __('pages.createPage') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a href="{{ url('/') }}">{{ __('Pagrindinis') }}</a>
+                            <a href="{{ url('/') }}">{{ __('pages.main') }}</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('puslapiai.index') }}">{{ __('Puslapiai') }}</a>
+                            <a href="{{ route('puslapiai.index') }}">{{ __('pages.pages') }}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{ __('Sukurti puslapį') }}</li>
+                        <li class="breadcrumb-item active">{{ __('pages.createPage') }}</li>
                     </ol>
                 </div>
             </div>
@@ -32,7 +32,10 @@
 @push('scripts')
     <script>
         ClassicEditor
-            .create(document.querySelector('#editor'), {})
+            .create(document.querySelector('#editor_lt'), {})
             .catch(error => console.error(error));
+        ClassicEditor
+            .create(document.querySelector('#editor_en'), {})
+            .catch(error => console.error(error));    
     </script>
 @endpush

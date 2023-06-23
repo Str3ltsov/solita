@@ -16,7 +16,7 @@ class ContactFormService extends ImageService
     {
         $contactForm = ContactForm::find($id);
 
-        !$contactForm && throw new Error('Failed to get contact form');
+        !$contactForm && throw new Error('messages.errorGetContactForm');
 
         return $contactForm;
     }

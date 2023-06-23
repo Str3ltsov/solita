@@ -52,7 +52,7 @@ class AdminPageController extends Controller
 
             return redirect()
                 ->route('puslapiai.index')
-                ->with('success', __('Puslapis sėkmingai sukurtas ir išsaugotas'));
+                ->with('success', __('messages.successCreatePage'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
@@ -86,7 +86,7 @@ class AdminPageController extends Controller
 
             $this->pService->updatePage($page, $validated, $imagePath);
 
-            return back()->with('success', __('Puslapis sėkmingai atnaujintas ir išsaugotas'));
+            return back()->with('success', __('messages.successUpdatePage'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
@@ -97,12 +97,16 @@ class AdminPageController extends Controller
         try {
             $page = $this->pService->getPageById($id);
 
+            if ($page->route == '' || $page->route == null) {
+                return back()->with('error', __('messages.errorDeleteMainPage'));
+            }
+
             $imagePath = public_path() . '/' . $page->image;
             $this->pService->checkAndDeleteImage($imagePath);
 
             $page->delete();
 
-            return back()->with('success', __('Puslapis sėkmingai ištrintas'));
+            return back()->with('success', __('messages.successDeletePage'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }

@@ -51,7 +51,7 @@ class AdminBlockController extends Controller
             $this->bService->createBlock($validated, $imagePath);
 
             return redirect(route('puslapiai.edit', $id))
-                ->with('success', __('Blokas sėkmingai sukurtas ir išsaugotas'));
+                ->with('success', __('messages.successCreateBlock'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
@@ -87,7 +87,7 @@ class AdminBlockController extends Controller
             $this->bService->updateBlock($block, $validated, $imagePath);
 
             return redirect(route('puslapiai.edit', $pageId))
-                ->with('success', __('Blokas sėkmingai atnaujintas ir išsaugotas'));
+                ->with('success', __('messages.successUpdateBlock'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }
@@ -100,7 +100,7 @@ class AdminBlockController extends Controller
             $block->delete();
 
             return redirect(route('puslapiai.edit', $pageId))
-                ->with('success', __('Blokas sėkmingai istrintas'));
+                ->with('success', __('messages.successDeleteBlock'));
         } catch (\Exception $exception) {
             return back()->with('error', $exception->getMessage());
         }

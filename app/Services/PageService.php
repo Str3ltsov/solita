@@ -16,7 +16,7 @@ class PageService extends ImageService
     {
         $page = Page::where('route', $route)->first();
 
-        !$page && throw new Error('Failed to get page');
+        !$page && throw new Error('messages.errorGetPage');
 
         return $page;
     }
@@ -25,18 +25,25 @@ class PageService extends ImageService
     {
         $page = Page::find($id);
 
-        !$page && throw new Error('Failed to get page');
+        !$page && throw new Error('messages.errorGetPage');
 
         return $page;
     }
 
     public function createPage(array $validated, ?string $imagePath): void
     {
-        Page::firstOrCreate([
-            'name' => $validated['name'],
+        Page::create([
+            'lt' => [
+                'name' => $validated['name_lt'],
+                'title' => $validated['title_lt'],
+                'text' => $validated['text_lt'] ?? NULL,
+            ],
+            'en' => [
+                'name' => $validated['name_en'],
+                'title' => $validated['title_en'],
+                'text' => $validated['text_en'] ?? NULL,
+            ],
             'route' => $validated['route'],
-            'title' => $validated['title'],
-            'text' => $validated['text'] ?? NULL,
             'image' => $imagePath ? $imagePath : NULL,
             'show_experience' => $validated['show_experience'],
             'experience_years' => $validated['experience_years'] ?? 0,
@@ -46,10 +53,12 @@ class PageService extends ImageService
 
     public final function updatePage(object $page, array $validated, ?string $imagePath): void
     {
-        $page->name = $validated['name'];
+        foreach (config('translatable.locales') as $locale) {
+            $page->translate($locale)->name = $validated["name_$locale"];
+            $page->translate($locale)->title = $validated["title_$locale"];
+            $page->translate($locale)->text = $validated["text_$locale"] ?? NULL;
+        }
         $page->route = $validated['route'];
-        $page->title = $validated['title'];
-        $page->text = $validated['text'];
         $imagePath && $page->image = $imagePath;
         $page->show_experience = $validated['show_experience'];
         $page->experience_years = $validated['experience_years'];

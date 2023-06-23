@@ -10,11 +10,20 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class PageFactory extends Factory
 {
     private static int $counter = -1;
+
     private array $names = [
-        'Pagrindinis',
-        'Apie mus',
-        'ES projektai',
-        'Paslaugos'
+        'lt' => [
+            'Pagrindinis',
+            'Apie mus',
+            'ES projektai',
+            'Paslaugos'
+        ],
+        'en' => [
+            'Home',
+            'About us',
+            'EU projects',
+            'Services'
+        ]
     ];
 
     private array $routes = [
@@ -25,10 +34,18 @@ class PageFactory extends Factory
     ];
 
     private array $titles = [
-        '',
-        'Įmonės misija',
-        'ES projektai',
-        'Įmonės veiklos sritys'
+        'lt' => [
+            '',
+            'Įmonės misija',
+            'ES projektai',
+            'Įmonės veiklos sritys'
+        ],
+        'en' => [
+            '',
+            'Company mission',
+            'EU projects',
+            "Company's activities"
+        ]
     ];
 
     private array $images = [
@@ -46,11 +63,17 @@ class PageFactory extends Factory
     public function definition(): array
     {
         self::$counter += 1;
-        
+
         return [
-            'name' => $this->names[self::$counter],
+            'lt' => [
+                'name' => $this->names['lt'][self::$counter],
+                'title' => self::$counter === 0 ? null : $this->titles['lt'][self::$counter],
+            ],
+            'en' => [
+                'name' => $this->names['en'][self::$counter],
+                'title' => self::$counter === 0 ? null : $this->titles['en'][self::$counter],
+            ],
             'route' => $this->routes[self::$counter],
-            'title' => self::$counter === 0 ? null : $this->titles[self::$counter],
             'text' => null,
             'image' => $this->images[self::$counter],
             'experience_years' => self::$counter === 2 ? 0 : 5,

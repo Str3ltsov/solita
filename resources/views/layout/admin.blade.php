@@ -9,11 +9,14 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css') }}">
     <link href="{{ asset('fontawesome-free-6.3.0-web/css/all.css') }}" rel="stylesheet">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/dist/css/adminlte.min.css') }}">
+    
     <style>
         .logo {
             font-size: 36px;
@@ -74,8 +77,12 @@
                 margin-top: 10px;
             }
         }
+
+        .ck-editor__editable_inline { min-height: 200px }
     </style>
+
     @stack('styles')
+
 </head>
 
 <body class="sidebar-mini layout-fixed" style="height: auto;">
@@ -146,14 +153,14 @@
                         data-accordion="false">
 
                         <li class="nav-header">
-                            {{ __('Meniu') }}
+                            {{ __('menu.menu') }}
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('puslapiai.index') }}"
                                 class="nav-link @if (str_contains(url()->current(), 'puslapiai')) active @endif">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    {{ __('Puslapiai') }}
+                                    {{ __('menu.pages') }}
                                 </p>
                             </a>
                         </li>
@@ -162,7 +169,7 @@
                                 class="nav-link @if (str_contains(url()->current(), 'kontaktai')) active @endif">
                                 <i class="fa-solid fa-address-book mr-2" style="margin-left: 6px"></i>
                                 <p>
-                                    {{ __('Kontaktai') }}
+                                    {{ __('menu.contacts') }}
                                 </p>
                             </a>
                         </li>
@@ -171,7 +178,7 @@
                                 class="nav-link @if (str_contains(url()->current(), 'pranesimai')) active @endif">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
-                                    {{ __('Pranešimai') }}
+                                    {{ __('menu.messages') }}
                                 </p>
                             </a>
                         </li>
@@ -179,13 +186,31 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="nav-link">
                                 @csrf
                                 <a class="col-12 d-inline-block" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); confirm('{{ __('Ar tikrai norite atsijungti?') }}') && document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault(); confirm('{{ __('messages.confirmLogout') }}') && document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-right-from-bracket mr-1 pr-1"></i>
                                     <p>
-                                        {{ __('Atsijungti') }}
+                                        {{ __('menu.logout') }}
                                     </p>
                                 </a>
                             </form>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa-solid fa-language ml-1 mr-2"></i>
+                                <p>
+                                    {{ config('app.locales.'.app()->getLocale()) }}
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                @foreach (config('app.locales') as $key => $locale)
+                                    <li class="nav-item">
+                                        <a href="/{{ $key }}" class="nav-link @if ($key == app()->getLocale()) active @endif">
+                                            <p>{{ $locale }}</p>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -197,7 +222,7 @@
         </div>
 
         <footer class="main-footer">
-            <strong>{{ __('Visos teisės saugomos © 2018-2023 UAB "Solita"') }}</strong>
+            <strong>{{ __('footer.allRightsReserved') . ' © 2018-2023 UAB "Solita"' }}</strong>
         </footer>
 
         <aside class="control-sidebar control-sidebar-dark" style="display: none; top: 57px; height: 798px;">
