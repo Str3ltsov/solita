@@ -16,7 +16,7 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('AdminLTE-3.2.0/dist/css/adminlte.min.css') }}">
-    
+
     <style>
         .logo {
             font-size: 36px;
@@ -78,7 +78,9 @@
             }
         }
 
-        .ck-editor__editable_inline { min-height: 200px }
+        .ck-editor__editable_inline {
+            min-height: 200px
+        }
     </style>
 
     @stack('styles')
@@ -198,14 +200,15 @@
                             <a href="#" class="nav-link">
                                 <i class="fa-solid fa-language ml-1 mr-2"></i>
                                 <p>
-                                    {{ config('app.locales.'.app()->getLocale()) }}
+                                    {{ config('app.locales.' . app()->getLocale()) }}
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview" style="display: none;">
                                 @foreach (config('app.locales') as $key => $locale)
                                     <li class="nav-item">
-                                        <a href="/{{ $key }}" class="nav-link @if ($key == app()->getLocale()) active @endif">
+                                        <a href="/{{ $key }}"
+                                            class="nav-link @if ($key == app()->getLocale()) active @endif">
                                             <p>{{ $locale }}</p>
                                         </a>
                                     </li>
@@ -222,7 +225,7 @@
         </div>
 
         <footer class="main-footer">
-            <strong>{{ __('footer.allRightsReserved') . ' © 2018-2023 UAB "Solita"' }}</strong>
+            <strong>{{ __('footer.allRightsReserved') . ' © 2018-2024 UAB "Solita"' }}</strong>
         </footer>
 
         <aside class="control-sidebar control-sidebar-dark" style="display: none; top: 57px; height: 798px;">

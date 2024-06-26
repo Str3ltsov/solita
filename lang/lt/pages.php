@@ -30,5 +30,7 @@ return [
 
     // Other
     'contactInfo' => 'Kontaktinė Info',
-    'experienceYears' => 'metų patiritis'
+    'experienceYears' => 'metų patiritis',
+    'firstProject' => 'Pirmas projektas',
+    'secondProject' => 'Antras projektas'
 ];

@@ -116,7 +116,7 @@
         <div class="footer__copyright">
             <div class="container">
                 <div class="copyright__text">
-                    <p>{{ __('footer.allRightsReserved') . ' © 2018-2023 UAB "Solita"' }}</p>
+                    <p>{{ __('footer.allRightsReserved') . ' © 2018-2024 UAB "Solita"' }}</p>
                 </div>
             </div>
         </div>

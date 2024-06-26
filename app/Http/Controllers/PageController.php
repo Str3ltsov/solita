@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function __construct(private PageService $pService, private BlockService $bService) {}
+    public function __construct(private PageService $pService, private BlockService $bService)
+    {
+    }
 
     public function mainPage()
     {
@@ -20,8 +22,14 @@ class PageController extends Controller
     }
 
     public function otherPage(string $route)
-    {        
+    {
+        $page = $this->pService->getPageByRoute($route);
+
+        if (str_contains('es_projektai', $route))
+            return view('other.eu_projects')
+                ->with('page', $page);
+
         return view('other.index')
-            ->with('page', $this->pService->getPageByRoute($route));
+            ->with('page', $page);
     }
 }

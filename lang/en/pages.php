@@ -30,5 +30,7 @@ return [
 
     // Other
     'contactInfo' => 'Contact Info',
-    'experienceYears' => 'years of experience'
+    'experienceYears' => 'years of experience',
+    'firstProject' => 'First project',
+    'secondProject' => 'Second project'
 ];

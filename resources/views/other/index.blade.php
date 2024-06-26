@@ -2,10 +2,10 @@
 
 @section('content')
     <main>
-        <section class="about__area pt-120 pb-60">
+        <section class="about__area pt-120 pb-60" id="trecias">
             <div class="container">
                 <div class="row align-items-start wow fadeInUp" data-wow-delay=".3s"
-                     style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                     <div class="col-xl-5 col-lg-4">
                         <div class="about__left-one p-relative mb-60">
                             <div class="about__left-thumb">
@@ -47,6 +47,6 @@
     <script>
         const h4 = document.querySelector('.about__description-text').querySelector('h4')
 
-        h4.classList.add('pb-10')
+        h4 && h4.classList.add('pb-10')
     </script>
 @endpush
