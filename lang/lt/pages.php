@@ -29,6 +29,7 @@ return [
     'loginAsAdministrator' => 'Prisijungti kaip administratorius',
 
     // Other
+    'websiteDescription' => 'Custom software development and IT experts for your business.',
     'contactInfo' => 'Kontaktinė Info',
     'experienceYears' => 'metų patiritis',
     'firstProject' => 'Pirmas projektas',

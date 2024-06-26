@@ -29,6 +29,7 @@ return [
     'loginAsAdministrator' => 'Login as administrator',
 
     // Other
+    'websiteDescription' => 'Individualios programinės įrangos kūrimas ir IT ekspertai jūsų verslui.',
     'contactInfo' => 'Contact Info',
     'experienceYears' => 'years of experience',
     'firstProject' => 'First project',
