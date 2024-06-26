@@ -31,6 +31,11 @@
                                         {{ $contacts[2]->description }}
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/jsc-solita" target="_blank">
+                                        <i class="fa-brands fa-linkedin-in fs-5"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -75,16 +80,18 @@
                                         @endforeach
                                     </select>
                                     <div class="nice-select fs-6" tabindex="0">
-                                        <span class="current">{{ config('app.locales.'.app()->getLocale()) }}</span>
+                                        <span class="current">{{ config('app.locales.' . app()->getLocale()) }}</span>
                                         <ul class="list">
                                             @foreach (config('app.locales') as $key => $locale)
-                                                <li data-value="{{ strtoupper($locale) }}" class="px-4 option @if ($key == app()->getLocale()) selected focus @endif">
-                                                    <a href="/{{ $key }}" class="mx-0 px-0">{{ $locale }}</a>
+                                                <li data-value="{{ strtoupper($locale) }}"
+                                                    class="px-4 option @if ($key == app()->getLocale()) selected focus @endif">
+                                                    <a href="/{{ $key }}"
+                                                        class="mx-0 px-0">{{ $locale }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
                                     </div>
-                                 </div>
+                                </div>
                                 <div class="bd-ud-header-bottom-cta-item d-none d-xl-block ms-4">
                                     @guest
                                         <a class="bd-ud-btn" href="{{ route('contacts') }}">

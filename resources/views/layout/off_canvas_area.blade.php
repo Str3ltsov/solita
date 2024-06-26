@@ -49,6 +49,17 @@
                                 </a>
                             </div>
                         </li>
+                        <li class="d-flex align-items-center">
+                            <div class="offcanvas__contact-icon mr-15">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div class="offcanvas__contact-text">
+                                <a href="https://www.linkedin.com/company/jsc-solita" target="_blank"
+                                    class="text-white">
+                                    <span>{{ __('LinkedIn') }}</span>
+                                </a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 {{--                <div class="offcanvas__social"> --}}
